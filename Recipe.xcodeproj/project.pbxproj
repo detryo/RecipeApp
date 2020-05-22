@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360D6B45247825CC00C36752 /* CategorySelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D6B44247825CC00C36752 /* CategorySelectionVC.swift */; };
 		360E4E7C2476D49800A746CC /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7B2476D49800A746CC /* FoodCategory.swift */; };
 		360E4E7E2476D51400A746CC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7D2476D51400A746CC /* Recipe.swift */; };
 		360E4E802476D6EA00A746CC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7F2476D6EA00A746CC /* DataSet.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360D6B44247825CC00C36752 /* CategorySelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionVC.swift; sourceTree = "<group>"; };
 		360E4E7B2476D49800A746CC /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		360E4E7D2476D51400A746CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		360E4E7F2476D6EA00A746CC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360D6B43247825A300C36752 /* CategorySelection */ = {
+			isa = PBXGroup;
+			children = (
+				360D6B44247825CC00C36752 /* CategorySelectionVC.swift */,
+			);
+			path = CategorySelection;
+			sourceTree = "<group>";
+		};
 		3637846A2476C6DF0089CE5F /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 				367CFD1524744B960012F85F /* Model */,
 				367CFD1424744B910012F85F /* View */,
 				367CFD1324744B880012F85F /* Controller */,
+				360D6B43247825A300C36752 /* CategorySelection */,
 				366B662B247457AA00A64780 /* Customs */,
 				367CFCFF24744B740012F85F /* AppDelegate.swift */,
 				367CFD0124744B740012F85F /* SceneDelegate.swift */,
@@ -309,6 +320,7 @@
 				360E4E802476D6EA00A746CC /* DataSet.swift in Sources */,
 				360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */,
 				366B66272474561000A64780 /* RegisterVC.swift in Sources */,
+				360D6B45247825CC00C36752 /* CategorySelectionVC.swift in Sources */,
 				360E4E7E2476D51400A746CC /* Recipe.swift in Sources */,
 				3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */,
 				3637846E2476C9420089CE5F /* ShadowView.swift in Sources */,

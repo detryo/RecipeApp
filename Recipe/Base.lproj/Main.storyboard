@@ -325,6 +325,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7ty-8P-zvO"/>
                     <connections>
+                        <outlet property="tableView" destination="l7d-ag-dUT" id="4nP-C3-iaS"/>
                         <segue destination="BmO-5f-SXZ" kind="show" identifier="toSelection" id="iT6-yh-PG5"/>
                     </connections>
                 </viewController>
@@ -332,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="935" y="821"/>
         </scene>
-        <!--View Controller-->
+        <!--Category SelectionVC-->
         <scene sceneID="DUw-Kj-x8E">
             <objects>
-                <viewController id="BmO-5f-SXZ" sceneMemberID="viewController">
+                <viewController id="BmO-5f-SXZ" customClass="CategorySelectionVC" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bEn-zY-Jkl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
