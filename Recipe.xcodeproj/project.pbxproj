@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360E4E7C2476D49800A746CC /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7B2476D49800A746CC /* FoodCategory.swift */; };
+		360E4E7E2476D51400A746CC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7D2476D51400A746CC /* Recipe.swift */; };
+		360E4E802476D6EA00A746CC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E7F2476D6EA00A746CC /* DataSet.swift */; };
+		360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E812477D1C700A746CC /* CategoryCell.swift */; };
+		3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846B2476C70F0089CE5F /* CategoryVC.swift */; };
+		3637846E2476C9420089CE5F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846D2476C9420089CE5F /* ShadowView.swift */; };
 		366B66272474561000A64780 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66262474561000A64780 /* RegisterVC.swift */; };
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
@@ -23,6 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360E4E7B2476D49800A746CC /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
+		360E4E7D2476D51400A746CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		360E4E7F2476D6EA00A746CC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		360E4E812477D1C700A746CC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		3637846B2476C70F0089CE5F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		3637846D2476C9420089CE5F /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		366B66262474561000A64780 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -54,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3637846A2476C6DF0089CE5F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3637846B2476C70F0089CE5F /* CategoryVC.swift */,
+				360E4E812477D1C700A746CC /* CategoryCell.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		366B662A2474564300A64780 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +91,7 @@
 				366B662C247457C300A64780 /* CustomButton.swift */,
 				366B662E247458E500A64780 /* CustomColor.swift */,
 				36FA9F3E24759AE9008DA038 /* CustomTextField.swift */,
+				3637846D2476C9420089CE5F /* ShadowView.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -114,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				366B662A2474564300A64780 /* Main */,
+				3637846A2476C6DF0089CE5F /* Category */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -128,6 +151,9 @@
 		367CFD1524744B960012F85F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				360E4E7B2476D49800A746CC /* FoodCategory.swift */,
+				360E4E7D2476D51400A746CC /* Recipe.swift */,
+				360E4E7F2476D6EA00A746CC /* DataSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,8 +306,14 @@
 			files = (
 				367CFD0424744B740012F85F /* HomeVC.swift in Sources */,
 				366B662F247458E500A64780 /* CustomColor.swift in Sources */,
+				360E4E802476D6EA00A746CC /* DataSet.swift in Sources */,
+				360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */,
 				366B66272474561000A64780 /* RegisterVC.swift in Sources */,
+				360E4E7E2476D51400A746CC /* Recipe.swift in Sources */,
+				3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */,
+				3637846E2476C9420089CE5F /* ShadowView.swift in Sources */,
 				366B662D247457C300A64780 /* CustomButton.swift in Sources */,
+				360E4E7C2476D49800A746CC /* FoodCategory.swift in Sources */,
 				36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */,
 				367CFD0024744B740012F85F /* AppDelegate.swift in Sources */,
 				366B66292474563A00A64780 /* LogInVC.swift in Sources */,
