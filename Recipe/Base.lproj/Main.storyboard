@@ -545,37 +545,44 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-SH-kPX">
-                                <rect key="frame" x="8" y="413" width="398" height="18"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 tbsp olive oil                                 " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-rM-XIo">
-                                        <rect key="frame" x="0.0" y="0.0" width="253.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szt-xM-wIr">
-                                        <rect key="frame" x="273.5" y="0.0" width="124.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvm-xm-izb">
+                                <rect key="frame" x="199" y="413" width="215" height="449"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="z5Z-Qy-wWP"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh2-id-P75">
+                                <rect key="frame" x="0.0" y="413" width="191" height="483"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4MK-AL-baA" firstAttribute="trailing" secondItem="Sar-4T-7TQ" secondAttribute="trailing" constant="8" id="0NH-tr-bp7"/>
                             <constraint firstItem="HNH-QL-K3F" firstAttribute="leading" secondItem="4MK-AL-baA" secondAttribute="leading" id="0W4-TI-5br"/>
                             <constraint firstItem="VPd-pV-W1n" firstAttribute="top" secondItem="Sar-4T-7TQ" secondAttribute="bottom" constant="16" id="14m-qk-T1c"/>
+                            <constraint firstItem="Qvm-xm-izb" firstAttribute="bottom" secondItem="4MK-AL-baA" secondAttribute="bottom" id="22u-nd-pIa"/>
                             <constraint firstItem="Sar-4T-7TQ" firstAttribute="top" secondItem="HNH-QL-K3F" secondAttribute="bottom" constant="20" id="2fa-rc-px0"/>
-                            <constraint firstItem="yhO-SH-kPX" firstAttribute="top" secondItem="VPd-pV-W1n" secondAttribute="bottom" constant="16" id="B4H-Uf-lhN"/>
-                            <constraint firstAttribute="trailing" secondItem="yhO-SH-kPX" secondAttribute="trailing" constant="8" id="HHb-as-b2d"/>
+                            <constraint firstItem="Qvm-xm-izb" firstAttribute="trailing" secondItem="4MK-AL-baA" secondAttribute="trailing" id="5Oo-JY-4wa"/>
+                            <constraint firstItem="Qvm-xm-izb" firstAttribute="leading" secondItem="bh2-id-P75" secondAttribute="trailing" constant="8" id="6CE-NA-oac"/>
+                            <constraint firstItem="bh2-id-P75" firstAttribute="leading" secondItem="4MK-AL-baA" secondAttribute="leading" id="Ni3-pp-Zdl"/>
                             <constraint firstItem="4MK-AL-baA" firstAttribute="trailing" secondItem="vcm-Cd-ovO" secondAttribute="trailing" constant="16" id="cVg-QV-Qlt"/>
+                            <constraint firstAttribute="bottom" secondItem="bh2-id-P75" secondAttribute="bottom" id="cdN-MT-AAR"/>
                             <constraint firstItem="vcm-Cd-ovO" firstAttribute="top" secondItem="Sar-4T-7TQ" secondAttribute="bottom" constant="16" id="dry-Mh-AvM"/>
+                            <constraint firstItem="Qvm-xm-izb" firstAttribute="top" secondItem="vcm-Cd-ovO" secondAttribute="bottom" constant="16" id="jIc-LS-zUe"/>
                             <constraint firstItem="VPd-pV-W1n" firstAttribute="leading" secondItem="4MK-AL-baA" secondAttribute="leading" constant="8" id="kf0-5g-9ez"/>
+                            <constraint firstItem="bh2-id-P75" firstAttribute="top" secondItem="VPd-pV-W1n" secondAttribute="bottom" constant="16" id="r6S-qd-vvH"/>
                             <constraint firstItem="HNH-QL-K3F" firstAttribute="trailing" secondItem="4MK-AL-baA" secondAttribute="trailing" id="vK4-NY-Vz6"/>
-                            <constraint firstItem="yhO-SH-kPX" firstAttribute="leading" secondItem="4MK-AL-baA" secondAttribute="leading" constant="8" id="wPV-IV-awe"/>
+                            <constraint firstItem="Qvm-xm-izb" firstAttribute="leading" secondItem="bh2-id-P75" secondAttribute="trailing" constant="8" id="vtM-Oz-kuD"/>
                             <constraint firstItem="HNH-QL-K3F" firstAttribute="top" secondItem="4MK-AL-baA" secondAttribute="top" id="xr9-3J-h5R"/>
                             <constraint firstItem="Sar-4T-7TQ" firstAttribute="leading" secondItem="4MK-AL-baA" secondAttribute="leading" constant="8" id="zTf-yk-pgS"/>
                         </constraints>
@@ -585,10 +592,10 @@
                     <connections>
                         <outlet property="cookTimeLabel" destination="v3X-3c-8hh" id="0QG-01-QOa"/>
                         <outlet property="difficultyLabel" destination="ja0-4Q-I2B" id="veo-4B-UdV"/>
-                        <outlet property="instructionsLabel" destination="Szt-xM-wIr" id="1tC-ql-LeT"/>
+                        <outlet property="instructionsTextView" destination="Qvm-xm-izb" id="e2Q-au-PDG"/>
                         <outlet property="prepTimeLabel" destination="iGN-wP-j0O" id="VsN-2n-hQ8"/>
                         <outlet property="recipeImage" destination="HeX-fm-3dY" id="Wxo-lf-isY"/>
-                        <outlet property="recipeIngredientsLabel" destination="mbc-rM-XIo" id="tKn-UW-RTt"/>
+                        <outlet property="recipeIngredientsTextView" destination="bh2-id-P75" id="mXl-7p-MOI"/>
                         <outlet property="servesLabel" destination="aum-I0-s5E" id="tIA-xG-YN5"/>
                     </connections>
                 </viewController>

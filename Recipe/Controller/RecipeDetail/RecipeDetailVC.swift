@@ -15,8 +15,8 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var cookTimeLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var servesLabel: UILabel!
-    @IBOutlet weak var recipeIngredientsLabel: UILabel!
-    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var recipeIngredientsTextView: UITextView!
+    @IBOutlet weak var instructionsTextView: UITextView!
     
     
     var selectedRecipe : Recipe!
@@ -35,7 +35,7 @@ class RecipeDetailVC: UIViewController {
         cookTimeLabel.text = selectedRecipe.timeToCook
         difficultyLabel.text = selectedRecipe.difficulty
         servesLabel.text = selectedRecipe.serves
-        recipeIngredientsLabel.text = selectedRecipe.ingridients
-        instructionsLabel.text = selectedRecipe.instructions
+        recipeIngredientsTextView.text = selectedRecipe.ingridients
+        instructionsTextView.text = selectedRecipe.instructions
     }
 }
