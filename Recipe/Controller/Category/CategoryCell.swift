@@ -22,13 +22,5 @@ class CategoryCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
     }
-    
-    func configureCell(category: FoodCategory) {
-        
-        categoryImage.image = UIImage(named: category.imageName)
-        categoryLabel.text = category.title
-    }
-
 }

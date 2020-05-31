@@ -17,9 +17,4 @@ class CategorySelectionCell: UICollectionViewCell {
         
         categorySelectedImage.layer.cornerRadius = 10
     }
-    
-    func configureCell(recipe: Recipe) {
-        
-        categorySelectedImage.image = UIImage(named: recipe.imageName)
-    }
 }

@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Recipe {
-    var title : String
-    var imageName : String
-    var ingridients : String
-    var instructions : String
-    var preparation : String
-    var timeToCook : String
-    var difficulty : String
-    var serves : String
+class Recipe: Object {
+    @objc dynamic var title : String = ""
+    @objc dynamic var imageName : Data?
+    @objc dynamic var ingridients : String = ""
+    @objc dynamic var instructions : String = ""
+    @objc dynamic var preparation : String = ""
+    @objc dynamic var timeToCook : String = ""
+    @objc dynamic var difficulty : String = ""
+    @objc dynamic var serves : String = ""
+    
+    let foodCategory = List<FoodCategory>()
 }

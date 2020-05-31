@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RecipeDetailVC: UIViewController {
     
@@ -30,7 +31,7 @@ class RecipeDetailVC: UIViewController {
 
     func setUpUI() {
         
-        recipeImage.image = UIImage(named: selectedRecipe.imageName)
+        recipeImage.image = UIImage(data: selectedRecipe.imageName!)
         prepTimeLabel.text = selectedRecipe.preparation
         cookTimeLabel.text = selectedRecipe.timeToCook
         difficultyLabel.text = selectedRecipe.difficulty

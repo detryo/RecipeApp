@@ -323,7 +323,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNZ-fv-RIY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7ty-8P-zvO"/>
+                    <navigationItem key="navigationItem" id="7ty-8P-zvO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="18O-n9-BOO">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="rcu-1a-KLR" kind="popoverPresentation" popoverAnchorBarButtonItem="18O-n9-BOO" id="UUC-te-QeC">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="l7d-ag-dUT" id="4nP-C3-iaS"/>
                         <segue destination="BmO-5f-SXZ" kind="show" identifier="toSelection" id="iT6-yh-PG5"/>
@@ -332,6 +341,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sx-r8-MPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="935" y="821"/>
+        </scene>
+        <!--New CategoryVC-->
+        <scene sceneID="apc-Sg-8FA">
+            <objects>
+                <viewController id="rcu-1a-KLR" customClass="NewCategoryVC" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I2n-5o-dqe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LcC-id-VSf">
+                                <rect key="frame" x="30" y="30.5" width="354" height="326.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LcC-id-VSf" secondAttribute="height" multiplier="293:272" id="fWe-Ui-lzU"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kva-uH-7As">
+                                <rect key="frame" x="30" y="374.5" width="354" height="30"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sps-Ci-77U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rcu-1a-KLR" id="E0U-dQ-9xQ"/>
+                                </connections>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="42H-6n-Vce">
+                                <rect key="frame" x="30" y="504.5" width="354" height="47"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyC-yc-yKF" customClass="CustomButton" customModule="Recipe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="47"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                        <state key="normal" title="CANCEL">
+                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelPressed:" destination="rcu-1a-KLR" eventType="touchUpInside" id="BhD-GD-rtT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LV-ZmQ" customClass="CustomButton" customModule="Recipe" customModuleProvider="target">
+                                        <rect key="frame" x="192" y="0.0" width="162" height="47"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                        <state key="normal" title="ACCEPT">
+                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePressed:" destination="rcu-1a-KLR" eventType="touchUpInside" id="5EO-lm-u8e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fiG-Qv-Y6s" firstAttribute="trailing" secondItem="42H-6n-Vce" secondAttribute="trailing" constant="30" id="AdA-n4-J7e"/>
+                            <constraint firstItem="42H-6n-Vce" firstAttribute="centerX" secondItem="I2n-5o-dqe" secondAttribute="centerX" id="B0e-4Y-6HE"/>
+                            <constraint firstItem="Kva-uH-7As" firstAttribute="top" secondItem="LcC-id-VSf" secondAttribute="bottom" constant="16" id="CjT-tb-aPX"/>
+                            <constraint firstItem="42H-6n-Vce" firstAttribute="leading" secondItem="fiG-Qv-Y6s" secondAttribute="leading" constant="30" id="EaZ-06-klD"/>
+                            <constraint firstItem="Kva-uH-7As" firstAttribute="centerX" secondItem="I2n-5o-dqe" secondAttribute="centerX" id="VGc-Uu-f51"/>
+                            <constraint firstItem="fiG-Qv-Y6s" firstAttribute="trailing" secondItem="LcC-id-VSf" secondAttribute="trailing" constant="30" id="ZSZ-hl-JMI"/>
+                            <constraint firstItem="LcC-id-VSf" firstAttribute="top" secondItem="fiG-Qv-Y6s" secondAttribute="top" constant="30" id="ZkW-h8-Vkp"/>
+                            <constraint firstItem="fiG-Qv-Y6s" firstAttribute="trailing" secondItem="Kva-uH-7As" secondAttribute="trailing" constant="30" id="cWV-9U-Lrs"/>
+                            <constraint firstItem="LcC-id-VSf" firstAttribute="leading" secondItem="fiG-Qv-Y6s" secondAttribute="leading" constant="30" id="dNG-1E-wz0"/>
+                            <constraint firstItem="42H-6n-Vce" firstAttribute="top" secondItem="Kva-uH-7As" secondAttribute="bottom" constant="100" id="hli-o3-g94"/>
+                            <constraint firstItem="Kva-uH-7As" firstAttribute="leading" secondItem="fiG-Qv-Y6s" secondAttribute="leading" constant="30" id="ooi-mj-evH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fiG-Qv-Y6s"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="LcC-id-VSf" id="VUp-vO-PQ0"/>
+                        <outlet property="textField" destination="Kva-uH-7As" id="aEV-Ug-VWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7z-q6-aJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="1516.7410714285713"/>
         </scene>
         <!--Category SelectionVC-->
         <scene sceneID="DUw-Kj-x8E">
@@ -610,6 +698,7 @@
     <resources>
         <image name="Slow cooker breakfast beans" width="500" height="454"/>
         <image name="burger0" width="1052" height="699"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="forkAndKnife" width="24" height="24"/>
         <image name="menu" width="50" height="50"/>
         <image name="timer" width="50" height="50"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CategorySelectionVC: UIViewController {
     
@@ -14,30 +15,33 @@ class CategorySelectionVC: UIViewController {
     
     var selectedCategory: String!
     var recipe: [Recipe]!
-    let data = DataSet()
     var recipeToPass: Recipe!
-
+    var foodCategory: Results<FoodCategory>?
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        recipe = data.getRecipe(forCategoryTitle: selectedCategory)
     }
 }
 
 extension CategorySelectionVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipe.count
+        return foodCategory?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategorySelectionCell", for: indexPath) as? CategorySelectionCell {
             
-            let recipes = recipe[indexPath.row]
-            cell.configureCell(recipe: recipes)
+            if let recipes = foodCategory?[indexPath.row] {
+                
+                cell.categorySelectedImage.image = UIImage(data: recipes.imageName!)
+            }
+            
             return cell
         }
         return UICollectionViewCell()
@@ -52,7 +56,7 @@ extension CategorySelectionVC: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        recipeToPass = recipe[indexPath.item]
+        recipeToPass = recipe?[indexPath.row]
         performSegue(withIdentifier: "toRecipeDetail", sender: self)
     }
     
@@ -64,3 +68,4 @@ extension CategorySelectionVC: UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 }
+

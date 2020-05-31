@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct FoodCategory {
-    let title : String
-    let imageName : String
+class FoodCategory: Object {
+    @objc dynamic var title : String = ""
+    @objc dynamic var imageName : Data?
+    
+    var parentCategory = LinkingObjects(fromType: Recipe.self, property: "foodCategory")
 }
