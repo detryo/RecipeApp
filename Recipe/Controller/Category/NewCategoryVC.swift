@@ -65,7 +65,6 @@ class NewCategoryVC: UIViewController {
         do {
             try realm.write {
                 realm.add(newCategory)
-                
             }
         } catch {
             print(error.localizedDescription)

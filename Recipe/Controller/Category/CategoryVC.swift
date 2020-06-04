@@ -14,8 +14,10 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //var data = DataSet()
-    var categories : Results<FoodCategory>?
-    var categoryToPass : String!
+    var selectedCategory = -1
+    var foodCategory : Results<FoodCategory>?
+    //var recipe: Results<Recipe>?
+    //var categoryToPass : String!
     let realm = try! Realm()
 
     override func viewDidLoad() {
@@ -42,7 +44,7 @@ class CategoryVC: UIViewController {
     }
 
      func loadCategories() {
-        self.categories = self.realm.objects(FoodCategory.self)
+        self.foodCategory = self.realm.objects(FoodCategory.self)
         
         }
     }
@@ -54,14 +56,14 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories?.count ?? 0
+        return foodCategory?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryCell {
             
-            if let category = categories?[indexPath.row] {
+            if let category = foodCategory?[indexPath.row] {
                 
                 cell.categoryLabel.text = category.title
                 cell.categoryImage.image = UIImage(data: category.imageName!)
@@ -77,15 +79,17 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        categoryToPass = categories?[indexPath.row].title
+        selectedCategory = indexPath.row
         performSegue(withIdentifier: "toSelection", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let recipeSelection = segue.destination as? CategorySelectionVC {
+        if segue.identifier == "toSelection" {
+            let destinationVC = segue.destination as? CategorySelectionVC
+            destinationVC?.selectedCategory = foodCategory![selectedCategory]
             
-            recipeSelection.selectedCategory = categoryToPass
+            NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newCategorySelection, object: nil)
         }
     }
 }

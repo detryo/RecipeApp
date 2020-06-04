@@ -18,6 +18,26 @@ class Recipe: Object {
     @objc dynamic var timeToCook : String = ""
     @objc dynamic var difficulty : String = ""
     @objc dynamic var serves : String = ""
+    @objc dynamic var colorHex : String?
     
-    let foodCategory = List<FoodCategory>()
+    //let foodCategory = List<FoodCategory>()
+    var parentCategory = LinkingObjects(fromType: FoodCategory.self, property: "categorySelection")
+}
+
+extension Recipe {
+
+    var color : UIColor? {
+
+        get {
+            guard let hex = colorHex else { return nil }
+            return UIColor(hex: hex)
+        }
+
+        set(newColor) {
+
+            if let newColor = newColor {
+                colorHex = newColor.toHex
+            }
+        }
+    }
 }

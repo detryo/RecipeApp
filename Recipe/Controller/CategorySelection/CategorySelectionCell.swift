@@ -11,6 +11,7 @@ import UIKit
 class CategorySelectionCell: UICollectionViewCell {
     
     @IBOutlet weak var categorySelectedImage: UIImageView!
+    @IBOutlet weak var categorySelectedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

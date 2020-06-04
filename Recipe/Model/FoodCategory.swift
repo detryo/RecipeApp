@@ -13,5 +13,8 @@ class FoodCategory: Object {
     @objc dynamic var title : String = ""
     @objc dynamic var imageName : Data?
     
-    var parentCategory = LinkingObjects(fromType: Recipe.self, property: "foodCategory")
+    //var parentCategory = LinkingObjects(fromType: FoodCategory.self, property: "categorySelection")
+    
+    //var parentCategory = LinkingObjects(fromType: CategorySelection.self, property: "categorySelection")
+    let categorySelection = List<Recipe>()
 }
