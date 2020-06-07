@@ -22,7 +22,15 @@ public class NewCategorySelectionVC: UIViewController {
     let imagePicker = UIImagePickerController()
     let colorKeys = ["R", "G", "B", "A"]
     let realm = try! Realm()
-    var foodCategory: FoodCategory?
+    var foodCategory: FoodCategory?{
+        didSet {
+            loadNotes()
+        }
+    }
+    
+    func loadNotes() {
+        print("add recipes for  \(String(describing: foodCategory))")
+    }
  
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,11 +88,12 @@ public class NewCategorySelectionVC: UIViewController {
         newCategory.title = textField.text!
         newCategory.colorHex = UIColor(hex: hexLabel.text!)?.toHex
         newCategory.imageName = imageView.image?.jpegData(compressionQuality: 0) // imagen reducida
-        self.foodCategory?.categorySelection.append(newCategory)
+        print("add \(newCategory) to \(String(describing: self.foodCategory))")
         
         do {
             
             try realm.write {
+                self.foodCategory?.categorySelection.append(newCategory)
                 realm.add(newCategory)
             }
             

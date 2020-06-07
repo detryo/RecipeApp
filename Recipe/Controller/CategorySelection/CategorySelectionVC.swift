@@ -12,16 +12,9 @@ import RealmSwift
 class CategorySelectionVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-//    let imageView = CategorySelectionCell()
-//    let imagePicker = UIImagePickerController()
-    //var recipe: [Recipe]!
-    //var recipeToPass: Recipe!
-    //var foodCategory: Results<FoodCategory>?
-    //var selectedCategory: String!
+ 
     let realm = try! Realm()
-    var categorySelection : Results<Recipe>?
-    
+    var selectedRecipe: Recipe?
     var selectedCategory : FoodCategory?{
         didSet {
             loadNotes()
@@ -39,43 +32,8 @@ class CategorySelectionVC: UIViewController {
     }
     
     func loadNotes() {
-        categorySelection = selectedCategory?.categorySelection.sorted(byKeyPath: "title", ascending: true)
+        print("loadding recipes for  \(selectedCategory)")
     }
-    
-//    @IBAction func savePressed(_ sender: UIBarButtonItem) {
-//
-//        var textField = UITextField()
-//
-//        let controller = UIAlertController(title: "Implement New Note", message: "", preferredStyle: .alert)
-//        let addAction = UIAlertAction(title: "Implement Item", style: .default) { (action) in
-//
-//            do {
-//
-//                try self.realm.write {
-//                    let categorySelection = CategorySelection()
-//                    categorySelection.title = textField.text!
-//                    self.selectedCategory?.categorySelection.append(categorySelection) // <- esta manda
-//                    self.collectionView.reloadData()
-//                }
-//
-//            } catch {
-//                print("error")
-//            }
-//        }
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//        controller.addAction(addAction)
-//        controller.addAction(cancelAction)
-//
-//        controller.addTextField { (alertTextField) in
-//
-//            alertTextField.placeholder = "Write your note"
-//            textField = alertTextField
-//        }
-//
-//        present(controller, animated: true, completion: nil)
-//    }
     
     @objc func notificationReceived(_ notification: Notification) {
         collectionView.reloadData()
@@ -88,32 +46,44 @@ class CategorySelectionVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.loadCategories()
-    }
-
-    func loadCategories() {
-        self.categorySelection = self.realm.objects(Recipe.self)
+        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toAddRecipe" {
+            let destinationVC = segue.destination as? NewCategorySelectionVC
+            print("to add recipe destinationVC \(String(describing: selectedCategory))")
+            destinationVC?.foodCategory = selectedCategory
+            
+        } else if segue.identifier == "toRecipeDetail" {
+            let destinationVC = segue.destination as? RecipeDetailVC
+            print("to recipe detail \(String(describing: selectedRecipe))")
+            destinationVC?.recipe = selectedRecipe
+            
+        }
+    }
 }
 
 extension CategorySelectionVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categorySelection?.count ?? 0
+        print("recipie count  \(String(describing: selectedCategory))")
+        return selectedCategory?.categorySelection.count ?? 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategorySelectionCell", for: indexPath) as! CategorySelectionCell
-        
-            if let recipes = categorySelection?[indexPath.row] {
+        print("loading recipies for  \(String(describing: selectedCategory))")
+        if let recipes = selectedCategory?.categorySelection[indexPath.row] {
                 
-                //cell.categorySelectedLabel.text = recipes.title //
+                //cell.categorySelectedLabel.text = recipes.title
                 cell.categorySelectedImage.image = UIImage(data: recipes.imageName!)
                 cell.categorySelectedImage.layer.borderColor = UIColor(hex: recipes.colorHex!)?.cgColor
                 cell.categorySelectedImage.layer.borderWidth = 5
-                cell.categorySelectedImage.layer.cornerRadius = 10
+                cell.categorySelectedImage.layer.cornerRadius = 5
                 cell.categorySelectedImage.backgroundColor = UIColor(hex: recipes.colorHex!)
             }
 
@@ -129,16 +99,8 @@ extension CategorySelectionVC: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-       // recipeToPass = recipe?[indexPath.row]
+        selectedRecipe = selectedCategory?.categorySelection[indexPath.item]
+        print("selected recipe item \(indexPath.item) \(String(describing: selectedRecipe))")
         performSegue(withIdentifier: "toRecipeDetail", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let detailVC = segue.destination as? RecipeDetailVC {
-            
-            //detailVC.selectedRecipe = recipeToPass
-        }
-    }
 }
-

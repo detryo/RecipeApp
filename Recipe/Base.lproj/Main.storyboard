@@ -663,7 +663,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="savePressed:" destination="BmO-5f-SXZ" id="Rn9-fS-Uqr"/>
-                                <segue destination="SB7-Qy-sSh" kind="popoverPresentation" popoverAnchorBarButtonItem="zyl-A7-Caj" id="R7b-My-CPP">
+                                <segue destination="SB7-Qy-sSh" kind="popoverPresentation" identifier="toAddRecipe" popoverAnchorBarButtonItem="zyl-A7-Caj" id="R7b-My-CPP">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>

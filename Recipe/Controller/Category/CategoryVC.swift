@@ -45,7 +45,6 @@ class CategoryVC: UIViewController {
 
      func loadCategories() {
         self.foodCategory = self.realm.objects(FoodCategory.self)
-        
         }
     }
 
@@ -80,16 +79,18 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedCategory = indexPath.row
+        print("selected category vc \(selectedCategory)")
         performSegue(withIdentifier: "toSelection", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSelection" {
             let destinationVC = segue.destination as? CategorySelectionVC
+            print("destinationVC \(foodCategory![selectedCategory])")
             destinationVC?.selectedCategory = foodCategory![selectedCategory]
             
-            NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newCategorySelection, object: nil)
         }
     }
 }

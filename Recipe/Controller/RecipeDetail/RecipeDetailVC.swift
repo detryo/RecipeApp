@@ -19,8 +19,7 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var instructionsTextView: UITextView!
     
-    
-    var selectedRecipe : Recipe!
+    var recipe : Recipe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +30,12 @@ class RecipeDetailVC: UIViewController {
 
     func setUpUI() {
         
-        recipeImage.image = UIImage(data: selectedRecipe.imageName!)
-        prepTimeLabel.text = selectedRecipe.preparation
-        cookTimeLabel.text = selectedRecipe.timeToCook
-        difficultyLabel.text = selectedRecipe.difficulty
-        servesLabel.text = selectedRecipe.serves
-        recipeIngredientsTextView.text = selectedRecipe.ingridients
-        instructionsTextView.text = selectedRecipe.instructions
+        recipeImage.image = UIImage(data: recipe.imageName!)
+        prepTimeLabel.text = recipe.preparation
+        cookTimeLabel.text = recipe.timeToCook
+        difficultyLabel.text = recipe.difficulty
+        servesLabel.text = recipe.serves
+        recipeIngredientsTextView.text = recipe.ingridients
+        instructionsTextView.text = recipe.instructions
     }
 }
