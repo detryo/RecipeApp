@@ -18,16 +18,12 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "fromHomeToCategory", sender: self)
+            self.performSegue(withIdentifier: Segue.fromHomeToCategory, sender: self)
         }
-        
         setUpButton()
     }
 
     func setUpButton() {
-        
         logInButton.makeBacgroundWhiteWithBorder()
     }
-
 }
-

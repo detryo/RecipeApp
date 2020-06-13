@@ -12,14 +12,13 @@ import RealmSwift
 class CategoryVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     //var data = DataSet()
     var selectedCategory = -1
     var foodCategory : Results<FoodCategory>?
-    //var recipe: Results<Recipe>?
-    //var categoryToPass : String!
     let realm = try! Realm()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +29,7 @@ class CategoryVC: UIViewController {
     }
     
     @objc func notificationReceived(_ notification: Notification) {
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,22 +47,22 @@ class CategoryVC: UIViewController {
         }
     }
 
+// MARK: TableVIew Data Source, Delegate
 extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+    // Number of categories, if not any category, the value is 0
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodCategory?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryCell {
-            
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Cell.category, for: indexPath) as? CategoryCell {
+
             if let category = foodCategory?[indexPath.row] {
-                
                 cell.categoryLabel.text = category.title
                 cell.categoryImage.image = UIImage(data: category.imageName!)
             }
@@ -72,25 +71,40 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+    // Tamaño de la celda
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+       return 200
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         selectedCategory = indexPath.row
         print("selected category vc \(selectedCategory)")
-        performSegue(withIdentifier: "toSelection", sender: self)
-        
+        performSegue(withIdentifier: Segue.fromCategoryToRecipe, sender: self)
+    }
+    
+    // delete row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            if let deleteFoodCategory = foodCategory?[indexPath.row] {
+                do {
+                    try realm.write {
+                        realm.delete(deleteFoodCategory)
+                    }
+                } catch {
+                    print("Error deleting course: \(error)")
+                }
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "toSelection" {
-            let destinationVC = segue.destination as? CategorySelectionVC
+        if segue.identifier == Segue.fromCategoryToRecipe {
+            let destinationVC = segue.destination as? RecipeVC
             print("destinationVC \(foodCategory![selectedCategory])")
             destinationVC?.selectedCategory = foodCategory![selectedCategory]
-            
         }
     }
 }

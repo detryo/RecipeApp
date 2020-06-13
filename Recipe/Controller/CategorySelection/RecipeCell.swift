@@ -1,5 +1,5 @@
 //
-//  CategoryCell.swift
+//  CategorySelectionCell.swift
 //  Recipe
 //
 //  Created by Cristian Sedano Arenas on 22/05/2020.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class RecipeCell: UICollectionViewCell {
     
-    @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var categoryLabel: UILabel!
-
+    @IBOutlet weak var recipeImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        categoryImage.layer.cornerRadius = 10
+        recipeImage.layer.cornerRadius = 10
+        recipeImage.layer.borderWidth = 2
     }
 }

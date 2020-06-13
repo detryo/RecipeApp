@@ -8,21 +8,17 @@
 
 import UIKit
 import Firebase
-import SVProgressHUD
 
 class RegisterVC: UIViewController {
     
-    @IBOutlet weak var emailTextField: CustomTextField!
-    @IBOutlet weak var passwordTextField: CustomTextField!
-    @IBOutlet weak var confirmedPassword: CustomTextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmedPassword: UITextField!
     @IBOutlet weak var conditionSwitch: UISwitch!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
@@ -47,15 +43,15 @@ class RegisterVC: UIViewController {
         
         guard let email = emailTextField.text, let pass = passwordTextField.text else { return }
         
-        SVProgressHUD.show()
+        
         
         Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
             
             if error != nil {
                 print(error!)
             } else {
-                SVProgressHUD.dismiss()
-                self.performSegue(withIdentifier: "fromRegisterToCategory", sender: self)
+                
+                self.performSegue(withIdentifier: Segue.fromRegisterToCategory, sender: self)
             }
         }
     }

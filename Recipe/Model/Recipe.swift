@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Recipe: Object {
-    @objc dynamic var title : String? = ""
+   // @objc dynamic var title : String? = ""
     @objc dynamic var imageName : Data?
     @objc dynamic var ingridients : String = ""
     @objc dynamic var instructions : String = ""
@@ -20,8 +20,7 @@ class Recipe: Object {
     @objc dynamic var serves : String = ""
     @objc dynamic var colorHex : String?
     
-    //let foodCategory = List<FoodCategory>()
-    var parentCategory = LinkingObjects(fromType: FoodCategory.self, property: "categorySelection")
+    var parentCategory = LinkingObjects(fromType: FoodCategory.self, property: "recipes")
 }
 
 extension Recipe {

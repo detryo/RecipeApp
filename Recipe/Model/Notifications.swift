@@ -11,5 +11,5 @@ import Foundation
 class Notifications {
     
     static let viewControllerPublishNotification = NSNotification.Name(rawValue: "ViewControllerPublishEvent")
-    static let newCategorySelection = NSNotification.Name(rawValue: "NewCategorySelection")
+    static let newRecipe = NSNotification.Name(rawValue: "NewRecipe")
 }

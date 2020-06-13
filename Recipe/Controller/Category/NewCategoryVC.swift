@@ -27,7 +27,7 @@ class NewCategoryVC: UIViewController {
         imagePicker.delegate = self
 
     }
-
+    // Presiona la imagen y apareceun pop up con las opciones de co
     @objc func imageViewTapped() {
         
         let controller = UIAlertController(title: "Select Image", message: "", preferredStyle: .actionSheet)
@@ -48,7 +48,7 @@ class NewCategoryVC: UIViewController {
         
         self.present(controller, animated: true, completion: nil)
     }
-    
+    // presentamos las opciones de la libreria de fotos con una como defecto
     func presentImagePicker(with sourceType: UIImagePickerController.SourceType = .savedPhotosAlbum) {
         
         imagePicker.allowsEditing = false
@@ -57,7 +57,7 @@ class NewCategoryVC: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
-        
+        // asociamos newCategory a FoodCategory para tener acceso a sus variables
         let newCategory = FoodCategory()
         newCategory.title = textField.text!
         newCategory.imageName = imageView.image?.jpegData(compressionQuality: 0) // imagen reducida
@@ -69,6 +69,7 @@ class NewCategoryVC: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
         dismiss(animated: true, completion: nil)
         // Pasar informacion a la CategoryVC
         NotificationCenter.default.post(name: Notifications.viewControllerPublishNotification, object: nil, userInfo: nil)

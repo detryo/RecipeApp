@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import SVProgressHUD
 
 class LogInVC: UIViewController {
     
@@ -16,11 +15,8 @@ class LogInVC: UIViewController {
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -41,15 +37,15 @@ class LogInVC: UIViewController {
             return
         }
         
-        SVProgressHUD.show()
+        
         
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
              
             if error != nil {
                 print(error!)
             } else {
-                SVProgressHUD.dismiss()
-                self.performSegue(withIdentifier: "fromLogInToCategory", sender: self)
+                
+                self.performSegue(withIdentifier: Segue.fromLoginToCategory, sender: self)
             }
         }
     }
