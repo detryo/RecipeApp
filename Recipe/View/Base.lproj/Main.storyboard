@@ -333,20 +333,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger1" translatesAutoresizingMaskIntoConstraints="NO" id="clS-AM-MmK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High protein breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="clS-AM-MmK">
                                                     <rect key="frame" x="10" y="0.0" width="355" height="150"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pasta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6LJ-Rr-DyZ">
+                                                    <rect key="frame" x="8" y="8" width="359" height="144"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="50"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="6LJ-Rr-DyZ" firstAttribute="top" secondItem="Qr7-Vc-u1u" secondAttribute="top" constant="8" id="2MM-BH-25k"/>
+                                                <constraint firstItem="6LJ-Rr-DyZ" firstAttribute="leading" secondItem="Qr7-Vc-u1u" secondAttribute="leading" constant="8" id="3Yy-TT-IRu"/>
                                                 <constraint firstAttribute="bottom" secondItem="clS-AM-MmK" secondAttribute="bottom" constant="10" id="8wr-4l-S7k"/>
                                                 <constraint firstItem="clS-AM-MmK" firstAttribute="leading" secondItem="Qr7-Vc-u1u" secondAttribute="leading" constant="10" id="HY5-38-WNY"/>
                                                 <constraint firstItem="clS-AM-MmK" firstAttribute="top" secondItem="Qr7-Vc-u1u" secondAttribute="top" id="S28-30-maG"/>
                                                 <constraint firstAttribute="trailing" secondItem="clS-AM-MmK" secondAttribute="trailing" constant="10" id="S4H-SU-k4L"/>
+                                                <constraint firstAttribute="trailing" secondItem="6LJ-Rr-DyZ" secondAttribute="trailing" constant="8" id="Sqz-Qv-pGP"/>
+                                                <constraint firstAttribute="bottom" secondItem="6LJ-Rr-DyZ" secondAttribute="bottom" constant="8" id="fvT-KB-pTp"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="375" height="160"/>
                                         <connections>
                                             <outlet property="categoryCollectionImage" destination="clS-AM-MmK" id="low-gz-jZJ"/>
+                                            <outlet property="categoryCollectionLabel" destination="6LJ-Rr-DyZ" id="A7m-QZ-Xet"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -378,11 +389,67 @@
                         <outlet property="collectionView" destination="TLz-FK-vyZ" id="LdY-ST-KIs"/>
                         <outlet property="tableView" destination="l7d-ag-dUT" id="4nP-C3-iaS"/>
                         <segue destination="BmO-5f-SXZ" kind="show" identifier="fromCategoryToRecipe" id="iT6-yh-PG5"/>
+                        <segue destination="ROe-6m-IbK" kind="show" identifier="fromCategoryToStaticRecipe" id="YZ3-eD-Vau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sx-r8-MPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="820.98214285714278"/>
+        </scene>
+        <!--Static RecipeVC-->
+        <scene sceneID="aQg-H8-pNg">
+            <objects>
+                <tableViewController id="ROe-6m-IbK" customClass="StaticRecipeVC" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x5H-TK-caw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeTableViewCell" rowHeight="170" id="gjn-rj-xrb" customClass="RecipeTableViewCell" customModule="Recipe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gjn-rj-xrb" id="bqf-Sx-kBU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mo-oe-G4H" customClass="ShadowView" customModule="Recipe" customModuleProvider="target">
+                                            <rect key="frame" x="28" y="11" width="358" height="140"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Creamy courgette &amp; bacon pasta" translatesAutoresizingMaskIntoConstraints="NO" id="rUD-DH-Ve0">
+                                                    <rect key="frame" x="8" y="0.0" width="342" height="132"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rUD-DH-Ve0" secondAttribute="bottom" constant="8" id="D6N-xq-t4Y"/>
+                                                <constraint firstItem="rUD-DH-Ve0" firstAttribute="leading" secondItem="3Mo-oe-G4H" secondAttribute="leading" constant="8" id="Tsy-8z-qrX"/>
+                                                <constraint firstAttribute="trailing" secondItem="rUD-DH-Ve0" secondAttribute="trailing" constant="8" id="cHb-ag-yZa"/>
+                                                <constraint firstItem="rUD-DH-Ve0" firstAttribute="top" secondItem="3Mo-oe-G4H" secondAttribute="top" id="cOm-T8-dC3"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3Mo-oe-G4H" secondAttribute="bottom" constant="8" id="9mZ-Mo-kFj"/>
+                                        <constraint firstItem="3Mo-oe-G4H" firstAttribute="top" secondItem="bqf-Sx-kBU" secondAttribute="topMargin" id="QJf-Kb-UCi"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3Mo-oe-G4H" secondAttribute="trailing" constant="8" id="YoC-Ua-8zH"/>
+                                        <constraint firstItem="3Mo-oe-G4H" firstAttribute="leading" secondItem="bqf-Sx-kBU" secondAttribute="leadingMargin" constant="8" id="yOO-PE-iy0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="recipeImage" destination="rUD-DH-Ve0" id="sfH-29-zG6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ROe-6m-IbK" id="trx-wo-Bv5"/>
+                            <outlet property="delegate" destination="ROe-6m-IbK" id="YP4-pb-9bh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BBu-UU-Zvu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVz-hL-yQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815.9420289855075" y="817.63392857142856"/>
         </scene>
         <!--New CategoryVC-->
         <scene sceneID="apc-Sg-8FA">
@@ -461,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7z-q6-aJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="1516.7410714285713"/>
+            <point key="canvasLocation" x="935" y="1626"/>
         </scene>
         <!--New Recipe-->
         <scene sceneID="EZ4-kx-gY5">
@@ -696,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItA-ii-u5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753.6231884057972" y="1516.7410714285713"/>
+            <point key="canvasLocation" x="1754" y="2308"/>
         </scene>
         <!--RecipeVC-->
         <scene sceneID="DUw-Kj-x8E">
@@ -723,7 +790,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jf1-SE-n5Z">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High protein breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="jf1-SE-n5Z">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
                                             </subviews>
@@ -744,8 +811,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Qhc-Zq-62f" firstAttribute="top" secondItem="5ua-Wt-mHl" secondAttribute="top" id="VHJ-qP-Ead"/>
                             <constraint firstItem="Qhc-Zq-62f" firstAttribute="leading" secondItem="5ua-Wt-mHl" secondAttribute="leading" id="VZA-sF-Qe6"/>
-                            <constraint firstItem="Qhc-Zq-62f" firstAttribute="top" secondItem="5ua-Wt-mHl" secondAttribute="top" id="Yod-G5-7Os"/>
                             <constraint firstItem="Qhc-Zq-62f" firstAttribute="trailing" secondItem="5ua-Wt-mHl" secondAttribute="trailing" id="m2f-SD-CKc"/>
                             <constraint firstAttribute="bottom" secondItem="Qhc-Zq-62f" secondAttribute="bottom" id="wfh-3W-YbM"/>
                         </constraints>
@@ -769,7 +836,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhR-nS-EoR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753.6231884057972" y="820.98214285714278"/>
+            <point key="canvasLocation" x="1754" y="1626"/>
         </scene>
         <!--Recipe DetailVC-->
         <scene sceneID="D6t-4o-qms">
@@ -782,7 +849,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNH-QL-K3F" customClass="ShadowView" customModule="Recipe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="220"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger0" translatesAutoresizingMaskIntoConstraints="NO" id="HeX-fm-3dY">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tuna pasta bake" translatesAutoresizingMaskIntoConstraints="NO" id="HeX-fm-3dY">
                                         <rect key="frame" x="8" y="8" width="398" height="204"/>
                                     </imageView>
                                 </subviews>
@@ -980,16 +1047,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GE5-T9-rVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598.5507246376815" y="820.98214285714278"/>
+            <point key="canvasLocation" x="2645" y="1626"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oua-hF-2Oi"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Creamy courgette &amp; bacon pasta" width="500" height="454"/>
+        <image name="High protein breakfast" width="500" height="454"/>
         <image name="Slow cooker breakfast beans" width="500" height="454"/>
-        <image name="burger0" width="1052" height="699"/>
-        <image name="burger1" width="1053" height="700"/>
+        <image name="Tuna pasta bake" width="500" height="454"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="forkAndKnife" width="24" height="24"/>
         <image name="menu" width="50" height="50"/>

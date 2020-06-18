@@ -14,16 +14,24 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //var data = DataSet()
     var selectedCategory = -1
     var foodCategory : Results<FoodCategory>?
     let realm = try! Realm()
+    
+    // staic data set
+    var dataSet = DataSet()
+    var categoryToPass: String!
+    var recipes : [StaticRecipe]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         // Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.viewControllerPublishNotification, object: nil)
     }
@@ -105,6 +113,41 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             let destinationVC = segue.destination as? RecipeVC
             print("destinationVC \(foodCategory![selectedCategory])")
             destinationVC?.selectedCategory = foodCategory![selectedCategory]
+            
+        } else if segue.identifier == Segue.fromCategoryToStaticRecipe {
+            let destinationVC = segue.destination as? StaticRecipeVC
+            print("destinationVC TableView \(String(describing: categoryToPass))")
+            destinationVC?.staticRecipe = categoryToPass
         }
+    }
+}
+// MARK: - Collection View Datasource, Delegate, Delegate Flow Layout for static data set
+extension CategoryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSet.categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.categoryCollection, for: indexPath) as? CategoryCollectionCell {
+        
+            cell.configureCell(staticRecipe: dataSet.categories[indexPath.row])
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           
+           let width = view.bounds.width
+           let cellDimension = (width / 2) - 15
+           return CGSize(width: cellDimension, height: cellDimension)
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        categoryToPass = dataSet.categories[indexPath.row].title
+        performSegue(withIdentifier: Segue.fromCategoryToStaticRecipe, sender: self)
     }
 }

@@ -27,7 +27,7 @@ class NewCategoryVC: UIViewController {
         imagePicker.delegate = self
 
     }
-    // Presiona la imagen y apareceun pop up con las opciones de co
+    // Presiona la imagen y aparece un pop up con las opciones de camara
     @objc func imageViewTapped() {
         
         let controller = UIAlertController(title: "Select Image", message: "", preferredStyle: .actionSheet)

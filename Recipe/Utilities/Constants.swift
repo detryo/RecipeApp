@@ -18,10 +18,13 @@ struct Segue {
     static let toAddRecipe = "toAddRecipe"
     static let showRecipeDetail = "ShowRecipeDetail"
     static let fromCategoryToRecipe = "fromCategoryToRecipe"
+    static let fromCategoryToStaticRecipe = "fromCategoryToStaticRecipe"
 }
 
 struct Cell {
     
     static let category = "CategoryCell"
     static let recipe = "RecipeCell"
+    static let recipeTableView = "RecipeTableViewCell"
+    static let categoryCollection = "CategoryCollectionCell"
 }
