@@ -140,9 +140,10 @@ extension CategoryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
+        
            let width = view.bounds.width
            let cellDimension = (width / 2) - 15
-           return CGSize(width: cellDimension, height: cellDimension)
+           return CGSize(width: width, height: cellDimension)
        }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

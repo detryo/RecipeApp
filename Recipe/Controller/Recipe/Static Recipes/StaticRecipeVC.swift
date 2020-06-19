@@ -53,6 +53,14 @@ class StaticRecipeVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         recipeToPass = staticRecipes[indexPath.item]
-        performSegue(withIdentifier: Segue.showRecipeDetail, sender: self)
+        performSegue(withIdentifier: Segue.showRecipeDetails, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let detailVC = segue.destination as? StaticRecipeDetailVC {
+            
+            detailVC.staticSelectRecipe = recipeToPass
+        }
     }
 }

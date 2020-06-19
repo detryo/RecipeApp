@@ -12,7 +12,6 @@ import RealmSwift
 class RecipeVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
     
     let realm = try! Realm()
     var selectedRecipe: Recipe?
@@ -43,6 +42,7 @@ class RecipeVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+        collectionView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

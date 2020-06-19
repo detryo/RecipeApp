@@ -22,6 +22,8 @@
 		3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846B2476C70F0089CE5F /* CategoryVC.swift */; };
 		3637846E2476C9420089CE5F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846D2476C9420089CE5F /* ShadowView.swift */; };
 		36457244249500D5002711E7 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36457243249500D5002711E7 /* CategoryCollectionCell.swift */; };
+		365611D8249CBAE5007867AA /* StaticRecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611D7249CBAE5007867AA /* StaticRecipeDetailVC.swift */; };
+		365611DA249CC6D7007867AA /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611D9249CC6D7007867AA /* Firebase+Utils.swift */; };
 		366B66272474561000A64780 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66262474561000A64780 /* RegisterVC.swift */; };
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
@@ -57,6 +59,8 @@
 		3637846B2476C70F0089CE5F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		3637846D2476C9420089CE5F /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		36457243249500D5002711E7 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		365611D7249CBAE5007867AA /* StaticRecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipeDetailVC.swift; sourceTree = "<group>"; };
+		365611D9249CC6D7007867AA /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		366B66262474561000A64780 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			children = (
 				3614DEE1249BDC2800B377EA /* StaticRecipeVC.swift */,
 				3626F783249A6ECB00365252 /* RecipeTableViewCell.swift */,
+				365611D7249CBAE5007867AA /* StaticRecipeDetailVC.swift */,
 			);
 			path = "Static Recipes";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				361F6EFE2493C749006DA29E /* Constants.swift */,
+				365611D9249CC6D7007867AA /* Firebase+Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -386,7 +392,9 @@
 				361F6EFF2493C749006DA29E /* Constants.swift in Sources */,
 				361B8B032483C60900ED16A2 /* Notifications.swift in Sources */,
 				366B662F247458E500A64780 /* CustomColor.swift in Sources */,
+				365611D8249CBAE5007867AA /* StaticRecipeDetailVC.swift in Sources */,
 				3614DEE2249BDC2800B377EA /* StaticRecipeVC.swift in Sources */,
+				365611DA249CC6D7007867AA /* Firebase+Utils.swift in Sources */,
 				360E4E802476D6EA00A746CC /* DataSet.swift in Sources */,
 				360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */,
 				366B66272474561000A64780 /* RegisterVC.swift in Sources */,

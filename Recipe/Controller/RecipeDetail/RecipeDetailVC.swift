@@ -11,6 +11,7 @@ import RealmSwift
 
 class RecipeDetailVC: UIViewController {
     
+    // Outels
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var prepTimeLabel: UILabel!
     @IBOutlet weak var cookTimeLabel: UILabel!
@@ -23,12 +24,12 @@ class RecipeDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setUpUI()
+        
+       setupUI()
     }
 
-
-    func setUpUI() {
+    // set up ui with customer details
+    func setupUI() {
         
         recipeImage.image = UIImage(data: recipe.imageName!)
         prepTimeLabel.text = recipe.preparation

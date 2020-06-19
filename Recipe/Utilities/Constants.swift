@@ -17,6 +17,7 @@ struct Segue {
     
     static let toAddRecipe = "toAddRecipe"
     static let showRecipeDetail = "ShowRecipeDetail"
+    static let showRecipeDetails = "ShowRecipeDetails"
     static let fromCategoryToRecipe = "fromCategoryToRecipe"
     static let fromCategoryToStaticRecipe = "fromCategoryToStaticRecipe"
 }
