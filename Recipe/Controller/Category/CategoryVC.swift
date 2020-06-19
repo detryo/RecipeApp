@@ -34,6 +34,9 @@ class CategoryVC: UIViewController {
         
         // Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.viewControllerPublishNotification, object: nil)
+        
+        // Volver al HomeVC, cuando presionamos el boton back
+        _ = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     }
     
     @objc func notificationReceived(_ notification: Notification) {
@@ -73,6 +76,15 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             if let category = foodCategory?[indexPath.row] {
                 cell.categoryLabel.text = category.title
                 cell.categoryImage.image = UIImage(data: category.imageName!)
+                
+                // Shadow View
+                cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+                cell.layer.shadowColor = UIColor.black.cgColor
+                cell.layer.shadowRadius = 5
+
+                cell.layer.shadowOpacity = 0.40
+                cell.layer.masksToBounds = false
+                cell.clipsToBounds = false
             }
             return cell
         }

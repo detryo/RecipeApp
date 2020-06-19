@@ -12,45 +12,79 @@ import Firebase
 class RegisterVC: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmedPassword: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var confirmPassText: UITextField!
     @IBOutlet weak var conditionSwitch: UISwitch!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passCheckImage: UIImageView!
+    @IBOutlet weak var conformPassCheckImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        conditionSwitch.layer.cornerRadius = 20
+        
+        passwordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        confirmPassText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+            
+        }
+        
+        @objc func textFieldDidChange(_ textField: UITextField) {
+            
+            guard let passText = passwordText.text else { return }
+            
+            //if we have started typing in the confirm pass text field
+            if textField == confirmPassText {
+                passCheckImage.isHidden = false
+                conformPassCheckImage.isHidden = false
+            } else {
+                // clear text field
+                if passText.isEmpty {
+                    passCheckImage.isHidden = true
+                    conformPassCheckImage.isHidden = true
+                    confirmPassText.text = ""
+                }
+            }
+            
+           // Make it so when the password match, the checkmarks turn green
+            if passwordText.text == confirmPassText.text {
+                passCheckImage.image = UIImage(named: AppImages.greenCheck)
+                conformPassCheckImage.image = UIImage(named: AppImages.greenCheck)
+            } else {
+                passCheckImage.image = UIImage(named: AppImages.redCheck)
+                conformPassCheckImage.image = UIImage(named: AppImages.redCheck)
+            }
+        }
     
     @IBAction func registerButton(_ sender: UIButton) {
         
+        guard let email = emailTextField.text, email.isNotEmpty,
+            let password = passwordText.text, password.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Please fill out all fields")
+                return
+        }
+        
+        guard let confirmPass = confirmPassText.text, confirmPass == password else {
+            simpleAlert(title: "Error", message: "Password do not match")
+            return
+        }
+        
         guard conditionSwitch.isOn else {
-            
-            let controller = UIAlertController(title: "", message: "You have not accept the termns", preferredStyle: .alert)
-            let alert = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            controller.addAction(alert)
-            present(controller, animated: true, completion: nil)
+            simpleAlert(title: "Error", message: "You have not accept the termns")
             return
         }
         
-        guard passwordTextField.text == confirmedPassword.text else {
+        activityIndicator.startAnimating()
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             
-            let controller = UIAlertController(title: "", message: "Your password does't match", preferredStyle: .alert)
-            let alert = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            controller.addAction(alert)
-            present(controller, animated: true, completion: nil)
-            return
-        }
-        
-        guard let email = emailTextField.text, let pass = passwordTextField.text else { return }
-        
-        
-        
-        Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
-            
-            if error != nil {
-                print(error!)
+            if let error = error {
+                debugPrint(error)
+                Auth.auth().handleFireAuthError(error: error, viewController: self)
+                self.activityIndicator.stopAnimating()
+                return
             } else {
-                
                 self.performSegue(withIdentifier: Segue.fromRegisterToCategory, sender: self)
             }
         }

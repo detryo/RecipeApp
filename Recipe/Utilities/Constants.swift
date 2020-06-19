@@ -29,3 +29,9 @@ struct Cell {
     static let recipeTableView = "RecipeTableViewCell"
     static let categoryCollection = "CategoryCollectionCell"
 }
+
+struct AppImages {
+    
+    static let greenCheck = "green_check"
+    static let redCheck = "red_check"
+}

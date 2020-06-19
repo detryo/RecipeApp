@@ -14,38 +14,40 @@ class LogInVC: UIViewController {
     @IBOutlet weak var emailTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+        
+        let forgotPasswordVC = ForgotPasswordVC()
+        forgotPasswordVC.modalTransitionStyle = .crossDissolve
+        forgotPasswordVC.modalPresentationStyle = .overCurrentContext
+        present(forgotPasswordVC, animated: true, completion: nil)
+    }
+    
     @IBAction func logInPressed(_ sender: UIButton) {
         
-        guard let email = emailTextField.text else {
-            let controller = UIAlertController(title: "", message: "Invalid Email", preferredStyle: .alert)
-            let alert = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            controller.addAction(alert)
-            present(controller, animated: true, completion: nil)
-            return
+        guard let email = emailTextField.text, email.isNotEmpty,
+            let pass = passwordTextField.text, pass.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Please fill out all fields")
+                return
         }
         
-        guard let pass = passwordTextField.text else {
-            let controller = UIAlertController(title: "", message: "Invalid password", preferredStyle: .alert)
-            let alert = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            controller.addAction(alert)
-            present(controller, animated: true, completion: nil)
-            return
-        }
-        
-        
+        activityIndicator.startAnimating()
         
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
-             
-            if error != nil {
-                print(error!)
+            
+            if let error = error {
+                debugPrint(error)
+                Auth.auth().handleFireAuthError(error: error, viewController: self)
+                self.activityIndicator.stopAnimating()
+                return
             } else {
-                
-                self.performSegue(withIdentifier: Segue.fromLoginToCategory, sender: self)
+                self.activityIndicator.stopAnimating()
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

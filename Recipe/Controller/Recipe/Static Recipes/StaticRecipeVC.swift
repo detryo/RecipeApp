@@ -41,6 +41,16 @@ class StaticRecipeVC: UITableViewController {
     
             let recipe = staticRecipes[indexPath.item]
             cell.configureCell(recipe: recipe)
+            
+            // Shadow View
+            cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowRadius = 5
+
+            cell.layer.shadowOpacity = 0.40
+            cell.layer.masksToBounds = false
+            cell.clipsToBounds = false
+            
             return cell
         }
         return UITableViewCell()

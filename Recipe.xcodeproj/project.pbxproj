@@ -24,6 +24,9 @@
 		36457244249500D5002711E7 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36457243249500D5002711E7 /* CategoryCollectionCell.swift */; };
 		365611D8249CBAE5007867AA /* StaticRecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611D7249CBAE5007867AA /* StaticRecipeDetailVC.swift */; };
 		365611DA249CC6D7007867AA /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611D9249CC6D7007867AA /* Firebase+Utils.swift */; };
+		365611DC249CD77D007867AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611DB249CD77D007867AA /* Extensions.swift */; };
+		365611E0249D0339007867AA /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611DE249D0339007867AA /* ForgotPasswordVC.swift */; };
+		365611E1249D0339007867AA /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365611DF249D0339007867AA /* ForgotPasswordVC.xib */; };
 		366B66272474561000A64780 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66262474561000A64780 /* RegisterVC.swift */; };
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
@@ -36,7 +39,6 @@
 		367CFD0C24744B760012F85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD0A24744B760012F85F /* LaunchScreen.storyboard */; };
 		367CFD1724744C860012F85F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD1624744C860012F85F /* GoogleService-Info.plist */; };
 		368A2446247EBFE800D65666 /* NewCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368A2445247EBFE800D65666 /* NewCategoryVC.swift */; };
-		36926CA02487980B00F9D1D9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36926C9F2487980B00F9D1D9 /* UIColor.swift */; };
 		36D9332E2499391B0082C420 /* StaticFoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332D2499391B0082C420 /* StaticFoodCategory.swift */; };
 		36D93330249939CC0082C420 /* StaticRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332F249939CC0082C420 /* StaticRecipe.swift */; };
 		36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9F3E24759AE9008DA038 /* CustomTextField.swift */; };
@@ -61,6 +63,9 @@
 		36457243249500D5002711E7 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		365611D7249CBAE5007867AA /* StaticRecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipeDetailVC.swift; sourceTree = "<group>"; };
 		365611D9249CC6D7007867AA /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
+		365611DB249CD77D007867AA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		365611DE249D0339007867AA /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		365611DF249D0339007867AA /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		366B66262474561000A64780 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -75,7 +80,6 @@
 		367CFD0D24744B760012F85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		367CFD1624744C860012F85F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		368A2445247EBFE800D65666 /* NewCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryVC.swift; sourceTree = "<group>"; };
-		36926C9F2487980B00F9D1D9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		36D9332D2499391B0082C420 /* StaticFoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFoodCategory.swift; sourceTree = "<group>"; };
 		36D9332F249939CC0082C420 /* StaticRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipe.swift; sourceTree = "<group>"; };
 		36FA9F3E24759AE9008DA038 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				361F6EFE2493C749006DA29E /* Constants.swift */,
 				365611D9249CC6D7007867AA /* Firebase+Utils.swift */,
+				365611DB249CD77D007867AA /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -143,6 +148,15 @@
 				36457243249500D5002711E7 /* CategoryCollectionCell.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		365611DD249D02EA007867AA /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				365611DE249D0339007867AA /* ForgotPasswordVC.swift */,
+				365611DF249D0339007867AA /* ForgotPasswordVC.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		366B662A2474564300A64780 /* Main */ = {
@@ -162,7 +176,6 @@
 				366B662E247458E500A64780 /* CustomColor.swift */,
 				36FA9F3E24759AE9008DA038 /* CustomTextField.swift */,
 				3637846D2476C9420089CE5F /* ShadowView.swift */,
-				36926C9F2487980B00F9D1D9 /* UIColor.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -193,6 +206,7 @@
 				367CFD1324744B880012F85F /* Controller */,
 				366B662B247457AA00A64780 /* Customs */,
 				361F6EFD2493C72F006DA29E /* Utilities */,
+				365611DD249D02EA007867AA /* Xibs */,
 				367CFCFF24744B740012F85F /* AppDelegate.swift */,
 				367CFD0124744B740012F85F /* SceneDelegate.swift */,
 				367CFD0824744B760012F85F /* Assets.xcassets */,
@@ -322,6 +336,7 @@
 			files = (
 				367CFD0C24744B760012F85F /* LaunchScreen.storyboard in Resources */,
 				367CFD1724744C860012F85F /* GoogleService-Info.plist in Resources */,
+				365611E1249D0339007867AA /* ForgotPasswordVC.xib in Resources */,
 				367CFD0924744B760012F85F /* Assets.xcassets in Resources */,
 				367CFD0724744B740012F85F /* Main.storyboard in Resources */,
 			);
@@ -394,6 +409,7 @@
 				366B662F247458E500A64780 /* CustomColor.swift in Sources */,
 				365611D8249CBAE5007867AA /* StaticRecipeDetailVC.swift in Sources */,
 				3614DEE2249BDC2800B377EA /* StaticRecipeVC.swift in Sources */,
+				365611E0249D0339007867AA /* ForgotPasswordVC.swift in Sources */,
 				365611DA249CC6D7007867AA /* Firebase+Utils.swift in Sources */,
 				360E4E802476D6EA00A746CC /* DataSet.swift in Sources */,
 				360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */,
@@ -410,8 +426,8 @@
 				360E4E7C2476D49800A746CC /* FoodCategory.swift in Sources */,
 				36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */,
 				367CFD0024744B740012F85F /* AppDelegate.swift in Sources */,
-				36926CA02487980B00F9D1D9 /* UIColor.swift in Sources */,
 				366B66292474563A00A64780 /* LogInVC.swift in Sources */,
+				365611DC249CD77D007867AA /* Extensions.swift in Sources */,
 				367CFD0224744B740012F85F /* SceneDelegate.swift in Sources */,
 				36072BEC2486C7830013FC17 /* NewRecipe.swift in Sources */,
 				36457244249500D5002711E7 /* CategoryCollectionCell.swift in Sources */,
