@@ -29,6 +29,7 @@ class RecipeVC: UIViewController {
         
         //Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newRecipe, object: nil)
+        collectionView.reloadData()
     }
     
     func loadRecipe() {
@@ -70,12 +71,12 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.recipe, for: indexPath) as! RecipeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.recipe, for: indexPath) as! RecipeCell
         print("loading recipies for  \(String(describing: selectedCategory))")
         if let recipes = selectedCategory?.recipes[indexPath.row] {
                 
-                //cell.categorySelectedLabel.text = recipes.title
-                cell.recipeImage.image = UIImage(data: recipes.imageName!)
+            cell.recipeTitles.text = recipes.recipeTitle
+            cell.recipeImage.image = UIImage(data: recipes.imageName!)
             }
             return cell
     }

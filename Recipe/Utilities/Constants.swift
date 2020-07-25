@@ -20,14 +20,20 @@ struct Segue {
     static let showRecipeDetails = "ShowRecipeDetails"
     static let fromCategoryToRecipe = "fromCategoryToRecipe"
     static let fromCategoryToStaticRecipe = "fromCategoryToStaticRecipe"
+    
+    // Search Bar
+    static let showSearchDetails = "ShowSearchDetails"
 }
 
-struct Cell {
+struct Identifier {
     
     static let category = "CategoryCell"
     static let recipe = "RecipeCell"
     static let recipeTableView = "RecipeTableViewCell"
     static let categoryCollection = "CategoryCollectionCell"
+    // Search Bar
+    static let cell = "Cell"
+    
 }
 
 struct AppImages {

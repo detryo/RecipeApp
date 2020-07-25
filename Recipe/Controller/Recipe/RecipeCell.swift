@@ -11,6 +11,7 @@ import UIKit
 class RecipeCell: UICollectionViewCell {
     
     @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeTitles: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

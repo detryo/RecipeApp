@@ -37,7 +37,7 @@ class StaticRecipeVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Cell.recipeTableView, for: indexPath) as? RecipeTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.recipeTableView, for: indexPath) as? RecipeTableViewCell {
     
             let recipe = staticRecipes[indexPath.item]
             cell.configureCell(recipe: recipe)

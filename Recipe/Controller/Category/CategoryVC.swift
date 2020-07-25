@@ -34,6 +34,7 @@ class CategoryVC: UIViewController {
         
         // Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.viewControllerPublishNotification, object: nil)
+        tableView.reloadData()
         
         // Volver al HomeVC, cuando presionamos el boton back
         _ = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -46,6 +47,7 @@ class CategoryVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+        self.tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +73,7 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Cell.category, for: indexPath) as? CategoryCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.category, for: indexPath) as? CategoryCell {
 
             if let category = foodCategory?[indexPath.row] {
                 cell.categoryLabel.text = category.title
@@ -142,7 +144,7 @@ extension CategoryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.categoryCollection, for: indexPath) as? CategoryCollectionCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.categoryCollection, for: indexPath) as? CategoryCollectionCell {
         
             cell.configureCell(staticRecipe: dataSet.categories[indexPath.row])
             return cell

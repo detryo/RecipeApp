@@ -1,16 +1,15 @@
 //
-//  RecipeDetailVC.swift
+//  SearchDetailsVC.swift
 //  Recipe
 //
-//  Created by Cristian Sedano Arenas on 22/05/2020.
+//  Created by Cristian Sedano Arenas on 23/07/2020.
 //  Copyright © 2020 Cristian Sedano Arenas. All rights reserved.
 //
 
 import UIKit
 
-class RecipeDetailVC: UIViewController {
+class SearchDetailsVC: UIViewController {
     
-    // Outels
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var prepTimeLabel: UILabel!
     @IBOutlet weak var cookTimeLabel: UILabel!
@@ -19,17 +18,16 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var instructionsTextView: UITextView!
     
-    var recipe : Recipe!
+    var recipe: Recipe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       setupUI()
-    }
 
-    // set up ui with customer details
+        setupUI()
+    }
+    
     func setupUI() {
-        
+           
         recipeImage.image = UIImage(data: recipe.imageName!)
         prepTimeLabel.text = recipe.preparation
         cookTimeLabel.text = recipe.timeToCook

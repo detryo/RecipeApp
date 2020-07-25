@@ -16,6 +16,7 @@ public class NewRecipe: UIViewController {
     @IBOutlet weak var cookTimeTextField: UITextField!
     @IBOutlet weak var difficultyTextField: UITextField!
     @IBOutlet weak var serversTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField! // TODO:
     @IBOutlet weak var ingridientsTextField: UITextView!
     @IBOutlet weak var instructionsTextField: UITextView!
     
@@ -70,6 +71,7 @@ public class NewRecipe: UIViewController {
     @IBAction func savePressed(_ sender: Any) {
 
         let newCategory = Recipe()
+        newCategory.recipeTitle = titleTextField.text! //
         newCategory.preparation = prepTimeTextField.text!
         newCategory.timeToCook = cookTimeTextField.text!
         newCategory.difficulty = difficultyTextField.text!
