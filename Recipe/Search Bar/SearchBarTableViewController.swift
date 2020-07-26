@@ -11,7 +11,10 @@ import RealmSwift
 
 class SearchBarTableViewController: UITableViewController {
     
-    var searchRecipe = [Recipe]()
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchRecipe = [Recipe]() // search bar
+    var currentSearchRecipe = [Recipe]() // prueba
     var selectRecipe: Recipe!
     let realm = try! Realm()
 
@@ -19,6 +22,8 @@ class SearchBarTableViewController: UITableViewController {
         super.viewDidLoad()
 
         refresh()
+        setupSearchBar()
+        currentSearchRecipe = searchRecipe
     }
     
     func refresh() {
@@ -27,14 +32,14 @@ class SearchBarTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchRecipe.count
+        return currentSearchRecipe.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.cell, for: indexPath) as? SearchBarCell
-        cell?.searchName.text = searchRecipe[indexPath.row].recipeTitle
-        cell?.searchImage.image = UIImage(data: searchRecipe[indexPath.row].imageName!)
+        cell?.searchName.text = currentSearchRecipe[indexPath.row].recipeTitle
+        cell?.searchImage.image = UIImage(data: currentSearchRecipe[indexPath.row].imageName!)
         
         return cell!
     }
@@ -48,9 +53,29 @@ class SearchBarTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == Segue.showSearchDetails {
-            let destinationVC = segue.destination as? SearchDetailsVC
+            let destinationVC = segue.destination as? RecipeDetailVC
             destinationVC?.recipe = selectRecipe
         }
     }
 }
-// TODO: hacer la search bar y el segue
+// MARK: Search Bar Methods
+extension SearchBarTableViewController: UISearchBarDelegate {
+    
+    private func setupSearchBar() {
+        searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard !searchText.isEmpty else {
+            currentSearchRecipe = searchRecipe
+            tableView.reloadData()
+            return
+        }
+        
+        currentSearchRecipe = searchRecipe.filter({ (recipe) -> Bool in
+            recipe.recipeTitle.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+}

@@ -42,7 +42,6 @@
 		36D9332E2499391B0082C420 /* StaticFoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332D2499391B0082C420 /* StaticFoodCategory.swift */; };
 		36D93330249939CC0082C420 /* StaticRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332F249939CC0082C420 /* StaticRecipe.swift */; };
 		36EA055C24C9E45A00963484 /* SearchBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055B24C9E45A00963484 /* SearchBarTableViewController.swift */; };
-		36EA055E24C9E88F00963484 /* SearchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055D24C9E88F00963484 /* SearchDetailsVC.swift */; };
 		36EA056024CAFF1C00963484 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055F24CAFF1C00963484 /* SearchBarCell.swift */; };
 		36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9F3E24759AE9008DA038 /* CustomTextField.swift */; };
 		F5B2E9EB00B7CF0BD7BB4C55 /* Pods_Recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */; };
@@ -86,7 +85,6 @@
 		36D9332D2499391B0082C420 /* StaticFoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFoodCategory.swift; sourceTree = "<group>"; };
 		36D9332F249939CC0082C420 /* StaticRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipe.swift; sourceTree = "<group>"; };
 		36EA055B24C9E45A00963484 /* SearchBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewController.swift; sourceTree = "<group>"; };
-		36EA055D24C9E88F00963484 /* SearchDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsVC.swift; sourceTree = "<group>"; };
 		36EA055F24CAFF1C00963484 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		36FA9F3E24759AE9008DA038 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3E50E0C69C678CE30BF29924 /* Pods-Recipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipe/Pods-Recipe.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				36EA055B24C9E45A00963484 /* SearchBarTableViewController.swift */,
-				36EA055D24C9E88F00963484 /* SearchDetailsVC.swift */,
 				36EA055F24CAFF1C00963484 /* SearchBarCell.swift */,
 			);
 			path = "Search Bar";
@@ -424,7 +421,6 @@
 				361F6EFF2493C749006DA29E /* Constants.swift in Sources */,
 				361B8B032483C60900ED16A2 /* Notifications.swift in Sources */,
 				366B662F247458E500A64780 /* CustomColor.swift in Sources */,
-				36EA055E24C9E88F00963484 /* SearchDetailsVC.swift in Sources */,
 				365611D8249CBAE5007867AA /* StaticRecipeDetailVC.swift in Sources */,
 				3614DEE2249BDC2800B377EA /* StaticRecipeVC.swift in Sources */,
 				365611E0249D0339007867AA /* ForgotPasswordVC.swift in Sources */,
