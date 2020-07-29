@@ -96,7 +96,7 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         performSegue(withIdentifier: Segue.showRecipeDetail, sender: self)
     }
 }
-
+// MARK: - Delete function and Recipe Favorite function
 extension RecipeVC: RecipeCellDelegate {
     
     func deleteRecipe(recipe: Recipe) {
@@ -110,7 +110,7 @@ extension RecipeVC: RecipeCellDelegate {
     }
     
     func recipeFavorite(recipe: Recipe) {
-        userService.favoriteSelected(recipe: recipe)
+        userService.favoriteSelected(recipe: recipe.self)
         print("recipe favorite \(recipe)")
     }
 }

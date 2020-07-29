@@ -142,6 +142,7 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             let destination = segue.destination as? RecipeVC
             destination?.selectedRecipe = selectedRecipe
             destination?.showFavorites = true
+            NotificationCenter.default.post(name: Notifications.newRecipe, object: nil, userInfo: nil)
             print("favorites fail \(String(describing: selectedRecipe))")
         }
     }
