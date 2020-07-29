@@ -10,10 +10,11 @@ import UIKit
 import RealmSwift
 
 class RecipeVC: UIViewController {
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     let realm = try! Realm()
+    var showFavorites = false //
     var selectedRecipe: Recipe?
     var selectedCategory : FoodCategory?{
         didSet {
@@ -74,11 +75,11 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.recipe, for: indexPath) as! RecipeCell
         print("loading recipies for  \(String(describing: selectedCategory))")
         if let recipes = selectedCategory?.recipes[indexPath.row] {
-                
-            cell.recipeTitles.text = recipes.recipeTitle
-            cell.recipeImage.image = UIImage(data: recipes.imageName!)
-            }
-            return cell
+            
+            cell.configureCell(recipe: recipes, delegate: self)
+            cell.delegate = self
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -93,5 +94,23 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         selectedRecipe = selectedCategory?.recipes[indexPath.item]
         print("selected recipe item \(indexPath.item) \(String(describing: selectedRecipe))")
         performSegue(withIdentifier: Segue.showRecipeDetail, sender: self)
+    }
+}
+
+extension RecipeVC: RecipeCellDelegate {
+    
+    func deleteRecipe(recipe: Recipe) {
+        
+        do {
+            try! realm.write({
+                realm.delete(recipe)
+            })
+        }
+        collectionView.reloadData()
+    }
+    
+    func recipeFavorite(recipe: Recipe) {
+        userService.favoriteSelected(recipe: recipe)
+        print("recipe favorite \(recipe)")
     }
 }

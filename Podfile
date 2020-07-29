@@ -11,5 +11,6 @@ target 'Recipe' do
     pod 'Firebase/Database'
     pod 'ChameleonFramework'
     pod 'RealmSwift'
+    pod 'IQKeyboardManagerSwift'
 
 end

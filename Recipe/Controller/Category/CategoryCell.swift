@@ -18,4 +18,9 @@ class CategoryCell: UITableViewCell {
         
         categoryImage.layer.cornerRadius = 10
     }
+    
+    func configureCell(category: FoodCategory) {
+        categoryImage.image = UIImage(data: category.imageName!)
+        categoryLabel.text = category.title
+    }
 }

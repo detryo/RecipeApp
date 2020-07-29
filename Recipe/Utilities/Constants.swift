@@ -20,9 +20,9 @@ struct Segue {
     static let showRecipeDetails = "ShowRecipeDetails"
     static let fromCategoryToRecipe = "fromCategoryToRecipe"
     static let fromCategoryToStaticRecipe = "fromCategoryToStaticRecipe"
-    
-    // Search Bar
     static let showSearchDetails = "ShowSearchDetails"
+    
+    static let toFavorites = "toFavorites"
 }
 
 struct Identifier {
@@ -31,13 +31,14 @@ struct Identifier {
     static let recipe = "RecipeCell"
     static let recipeTableView = "RecipeTableViewCell"
     static let categoryCollection = "CategoryCollectionCell"
-    // Search Bar
     static let cell = "Cell"
-    
 }
 
 struct AppImages {
     
     static let greenCheck = "green_check"
     static let redCheck = "red_check"
+    static let emptyStar = "empty_star"
+    static let filledStar = "filled_star"
 }
+

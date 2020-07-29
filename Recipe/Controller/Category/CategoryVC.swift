@@ -17,6 +17,7 @@ class CategoryVC: UIViewController {
     var selectedCategory = -1
     var foodCategory : Results<FoodCategory>?
     let realm = try! Realm()
+    var selectedRecipe: Recipe? 
     
     // staic data set
     var dataSet = DataSet()
@@ -57,8 +58,13 @@ class CategoryVC: UIViewController {
 
      func loadCategories() {
         self.foodCategory = self.realm.objects(FoodCategory.self)
-        }
     }
+    //
+    @IBAction func favoriteClicked(_ sender: Any) {
+        performSegue(withIdentifier: Segue.toFavorites, sender: self)
+    }
+    
+}
 
 // MARK: TableVIew Data Source, Delegate
 extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
@@ -76,9 +82,8 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.category, for: indexPath) as? CategoryCell {
 
             if let category = foodCategory?[indexPath.row] {
-                cell.categoryLabel.text = category.title
-                cell.categoryImage.image = UIImage(data: category.imageName!)
                 
+                cell.configureCell(category: category)
                 // Shadow View
                 cell.layer.shadowOffset = CGSize(width: 0, height: 0)
                 cell.layer.shadowColor = UIColor.black.cgColor
@@ -132,6 +137,12 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             let destinationVC = segue.destination as? StaticRecipeVC
             print("destinationVC TableView \(String(describing: categoryToPass))")
             destinationVC?.staticRecipe = categoryToPass
+            //
+        } else if segue.identifier == Segue.toFavorites {
+            let destination = segue.destination as? RecipeVC
+            destination?.selectedRecipe = selectedRecipe
+            destination?.showFavorites = true
+            print("favorites fail \(String(describing: selectedRecipe))")
         }
     }
 }

@@ -14,7 +14,7 @@ class SearchBarTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var searchRecipe = [Recipe]() // search bar
-    var currentSearchRecipe = [Recipe]() // prueba
+    var currentSearchRecipe = [Recipe]()
     var selectRecipe: Recipe!
     let realm = try! Realm()
 

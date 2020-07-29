@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,7 @@
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
 		366B662F247458E500A64780 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662E247458E500A64780 /* CustomColor.swift */; };
+		366F1B9824D02E0700BBFC97 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F1B9724D02E0700BBFC97 /* UserService.swift */; };
 		367CFD0024744B740012F85F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367CFCFF24744B740012F85F /* AppDelegate.swift */; };
 		367CFD0224744B740012F85F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367CFD0124744B740012F85F /* SceneDelegate.swift */; };
 		367CFD0424744B740012F85F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367CFD0324744B740012F85F /* HomeVC.swift */; };
@@ -72,6 +73,7 @@
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		366B662E247458E500A64780 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		366F1B9724D02E0700BBFC97 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		367CFCFC24744B740012F85F /* Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367CFCFF24744B740012F85F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367CFD0124744B740012F85F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			path = Customs;
 			sourceTree = "<group>";
 		};
+		366F1B9624D02DF400BBFC97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				366F1B9724D02E0700BBFC97 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		367CFCF324744B740012F85F = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		367CFD1324744B880012F85F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				366F1B9624D02DF400BBFC97 /* Services */,
 				366B662A2474564300A64780 /* Main */,
 				3637846A2476C6DF0089CE5F /* Category */,
 				360D6B43247825A300C36752 /* Recipe */,
@@ -364,31 +375,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA01CB94DC9E695AAB0BEFCA /* [CP] Check Pods Manifest.lock */ = {
@@ -433,6 +429,7 @@
 				368A2446247EBFE800D65666 /* NewCategoryVC.swift in Sources */,
 				3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */,
 				36D93330249939CC0082C420 /* StaticRecipe.swift in Sources */,
+				366F1B9824D02E0700BBFC97 /* UserService.swift in Sources */,
 				3626F784249A6ECB00365252 /* RecipeTableViewCell.swift in Sources */,
 				3637846E2476C9420089CE5F /* ShadowView.swift in Sources */,
 				366B662D247457C300A64780 /* CustomButton.swift in Sources */,

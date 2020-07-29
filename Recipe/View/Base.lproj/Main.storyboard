@@ -506,6 +506,12 @@
                                     <segue destination="oed-ww-hz5" kind="show" id="xtv-vU-XX8"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem style="plain" systemItem="save" id="i5b-KW-09Z">
+                                <color key="tintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="favoriteClicked:" destination="w1k-W7-ICz" id="Oyc-cb-sSh"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="18O-n9-BOO">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -521,6 +527,7 @@
                         <outlet property="tableView" destination="l7d-ag-dUT" id="4nP-C3-iaS"/>
                         <segue destination="BmO-5f-SXZ" kind="show" identifier="fromCategoryToRecipe" id="iT6-yh-PG5"/>
                         <segue destination="ROe-6m-IbK" kind="show" identifier="fromCategoryToStaticRecipe" id="YZ3-eD-Vau"/>
+                        <segue destination="BmO-5f-SXZ" kind="show" identifier="toFavorites" id="8Do-Sl-Lwu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sx-r8-MPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -936,7 +943,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="High protein breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="jf1-SE-n5Z">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="129"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TWh-IN-Q7e">
                                                     <rect key="frame" x="0.0" y="129" width="150" height="21"/>
@@ -947,19 +954,47 @@
                                                     <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPO-GI-v5q">
+                                                    <rect key="frame" x="122" y="8" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="FWZ-bw-xjP"/>
+                                                        <constraint firstAttribute="width" constant="20" id="Q3L-Fh-6Te"/>
+                                                    </constraints>
+                                                    <state key="normal" image="empty_star"/>
+                                                    <connections>
+                                                        <action selector="favoriteClicked:" destination="vTi-ul-nxf" eventType="touchUpInside" id="ohU-fz-ZHG"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxf-yQ-wvv">
+                                                    <rect key="frame" x="122" y="101" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="y9J-79-9RT"/>
+                                                        <constraint firstAttribute="width" constant="20" id="z9J-df-0rx"/>
+                                                    </constraints>
+                                                    <state key="normal" image="red_trash"/>
+                                                    <connections>
+                                                        <action selector="deleteClicked:" destination="vTi-ul-nxf" eventType="touchUpInside" id="qJ9-fu-MMD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lPO-GI-v5q" firstAttribute="top" secondItem="V69-Aa-PVh" secondAttribute="top" constant="8" id="0KE-c3-xwj"/>
+                                                <constraint firstItem="TWh-IN-Q7e" firstAttribute="top" secondItem="Hxf-yQ-wvv" secondAttribute="bottom" constant="8" id="0se-ZO-XfG"/>
+                                                <constraint firstItem="lPO-GI-v5q" firstAttribute="leading" secondItem="jf1-SE-n5Z" secondAttribute="trailing" constant="14" id="FpZ-2o-VKj"/>
                                                 <constraint firstItem="jf1-SE-n5Z" firstAttribute="top" secondItem="V69-Aa-PVh" secondAttribute="top" id="KaV-7k-D2R"/>
                                                 <constraint firstAttribute="trailing" secondItem="TWh-IN-Q7e" secondAttribute="trailing" id="OV3-1w-x4Q"/>
                                                 <constraint firstAttribute="bottom" secondItem="TWh-IN-Q7e" secondAttribute="bottom" id="XCB-qY-6Td"/>
                                                 <constraint firstItem="TWh-IN-Q7e" firstAttribute="top" secondItem="jf1-SE-n5Z" secondAttribute="bottom" id="aGh-sZ-S5E"/>
-                                                <constraint firstAttribute="trailing" secondItem="jf1-SE-n5Z" secondAttribute="trailing" id="fxk-Yl-b4L"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hxf-yQ-wvv" secondAttribute="trailing" constant="8" id="c0e-92-iK3"/>
                                                 <constraint firstItem="jf1-SE-n5Z" firstAttribute="leading" secondItem="V69-Aa-PVh" secondAttribute="leading" id="o0Q-B1-5iG"/>
+                                                <constraint firstAttribute="trailing" secondItem="lPO-GI-v5q" secondAttribute="trailing" constant="8" id="q2F-Ko-zJx"/>
                                                 <constraint firstItem="TWh-IN-Q7e" firstAttribute="leading" secondItem="V69-Aa-PVh" secondAttribute="leading" id="qxD-LX-I8d"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
+                                            <outlet property="deleteButton" destination="Hxf-yQ-wvv" id="t8y-sa-agU"/>
+                                            <outlet property="favoriteButton" destination="lPO-GI-v5q" id="15t-Yr-uwa"/>
                                             <outlet property="recipeImage" destination="jf1-SE-n5Z" id="gV1-4i-9mH"/>
                                             <outlet property="recipeTitles" destination="TWh-IN-Q7e" id="TUg-9X-4VG"/>
                                         </connections>
@@ -1438,7 +1473,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mc5-K5-GBS"/>
+        <segue reference="Rkf-Oy-slo"/>
+        <segue reference="8Do-Sl-Lwu"/>
         <segue reference="oua-hF-2Oi"/>
         <segue reference="xtv-vU-XX8"/>
     </inferredMetricsTieBreakers>
@@ -1448,9 +1484,11 @@
         <image name="Slow cooker breakfast beans" width="500" height="454"/>
         <image name="Tuna pasta bake" width="500" height="454"/>
         <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="empty_star" width="47" height="47"/>
         <image name="forkAndKnife" width="24" height="24"/>
         <image name="menu" width="50" height="50"/>
         <image name="red_check" width="40" height="40"/>
+        <image name="red_trash" width="28" height="30"/>
         <image name="timer" width="50" height="50"/>
     </resources>
 </document>
