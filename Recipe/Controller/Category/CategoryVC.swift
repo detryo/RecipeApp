@@ -141,8 +141,6 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         } else if segue.identifier == Segue.toFavorites {
             let destination = segue.destination as? RecipeVC
             destination?.selectedRecipe = selectedRecipe
-            destination?.showFavorites = true
-            NotificationCenter.default.post(name: Notifications.newRecipe, object: nil, userInfo: nil)
             print("favorites fail \(String(describing: selectedRecipe))")
         }
     }
@@ -165,7 +163,6 @@ extension CategoryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           
         
            let width = view.bounds.width
            let cellDimension = (width / 2) - 15

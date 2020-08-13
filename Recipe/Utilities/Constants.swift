@@ -23,6 +23,7 @@ struct Segue {
     static let showSearchDetails = "ShowSearchDetails"
     
     static let toFavorites = "toFavorites"
+    static let showEditing = "ShowEditing"
 }
 
 struct Identifier {
@@ -42,3 +43,6 @@ struct AppImages {
     static let filledStar = "filled_star"
 }
 
+struct BarButton {
+    static let back = "Back"
+}

@@ -19,5 +19,10 @@ class Recipe: Object {
     @objc dynamic var difficulty : String = ""
     @objc dynamic var serves : String = ""
     
+    // Hay que cambiarlo por Data
+    override static func primaryKey() -> String? {
+        return "recipeTitle"
+    }
+    
     var parentCategory = LinkingObjects(fromType: FoodCategory.self, property: "recipes")
 }

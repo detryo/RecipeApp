@@ -18,6 +18,7 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var servesLabel: UILabel!
     @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var instructionsTextView: UITextView!
+    @IBOutlet weak var recipeTitle: UILabel!
     
     var recipe : Recipe!
 
@@ -37,5 +38,6 @@ class RecipeDetailVC: UIViewController {
         servesLabel.text = recipe.serves
         recipeIngredientsTextView.text = recipe.ingridients
         instructionsTextView.text = recipe.instructions
+        recipeTitle.text = recipe.recipeTitle
     }
 }

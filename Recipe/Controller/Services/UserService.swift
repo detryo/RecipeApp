@@ -23,7 +23,6 @@ final class _UserService {
         } else {
             // Add as a favorite
             favorites.append(recipe)
-            
         }
     }
 }

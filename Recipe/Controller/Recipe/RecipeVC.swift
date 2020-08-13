@@ -14,7 +14,6 @@ class RecipeVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let realm = try! Realm()
-    var showFavorites = false //
     var selectedRecipe: Recipe?
     var selectedCategory : FoodCategory?{
         didSet {
@@ -30,17 +29,39 @@ class RecipeVC: UIViewController {
         
         //Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newRecipe, object: nil)
+        
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(title: BarButton.back, style: .done, target: self, action: #selector(backButtonPressed)), editButtonItem] //
+        collectionView.reloadData()
+    }
+    //
+    @objc func backButtonPressed() {
+        navigationController?.popViewController(animated: true)
+    }
+    //
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        collectionView.isMultipleTouchEnabled = true
+        collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
+            let cell = collectionView.cellForItem(at: indexPath) as? RecipeCell
+            cell?.isEditing = editing
+        }
         collectionView.reloadData()
     }
     
     func loadRecipe() {
         print("loadding recipes for  \(String(describing: selectedCategory))")
     }
+    
     // esta funcion es para que haga un reload namas añadir la imagen
     @objc func notificationReceived(_ notification: Notification) {
         collectionView.reloadData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -48,9 +69,11 @@ class RecipeVC: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("WTF IS destination \(segue.destination)")
         // Nos lleva al NewRecipe para añadir la receta
         if segue.identifier == Segue.toAddRecipe {
-            let destinationVC = segue.destination as? NewRecipe
+            let destinationVC = segue.destination as? AddEditRecipeVC
             print("to add recipe destinationVC \(String(describing: selectedCategory))")
             destinationVC?.foodCategory = selectedCategory
             
@@ -58,6 +81,11 @@ class RecipeVC: UIViewController {
         } else if segue.identifier == Segue.showRecipeDetail {
             let destinationVC = segue.destination as? RecipeDetailVC
             print("to recipe detail \(String(describing: selectedRecipe))")
+            destinationVC?.recipe = selectedRecipe
+            
+        } else if segue.identifier == Segue.showEditing {
+            let destinationVC = segue.destination as? AddEditRecipeVC
+            print("mmmmmm")
             destinationVC?.recipe = selectedRecipe
         }
     }
@@ -77,7 +105,7 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         if let recipes = selectedCategory?.recipes[indexPath.row] {
             
             cell.configureCell(recipe: recipes, delegate: self)
-            cell.delegate = self
+            cell.isEditing = isEditing //
         }
         return cell
     }
@@ -91,9 +119,15 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        selectedRecipe = selectedCategory?.recipes[indexPath.item]
-        print("selected recipe item \(indexPath.item) \(String(describing: selectedRecipe))")
-        performSegue(withIdentifier: Segue.showRecipeDetail, sender: self)
+        if  !isEditing {
+            selectedRecipe = selectedCategory?.recipes[indexPath.item]
+            print("selected recipe item \(indexPath.item) \(String(describing: selectedRecipe))")
+            performSegue(withIdentifier: Segue.showRecipeDetail, sender: self)
+        } else { //
+            selectedRecipe = selectedCategory?.recipes[indexPath.item]
+            print("selected editing recipe item \(indexPath.item) \(String(describing: selectedRecipe))")
+            performSegue(withIdentifier: Segue.showEditing, sender: self)
+        }
     }
 }
 // MARK: - Delete function and Recipe Favorite function
