@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol RecipeCellDelegate: class {
     func recipeFavorite(recipe: Recipe)
@@ -23,6 +24,8 @@ class RecipeCell: UICollectionViewCell {
     var recipe: Recipe!
     var delegate: RecipeCellDelegate?
     //
+    let realm = try! Realm()
+    
     var isEditing: Bool = false {
         didSet {
             favoriteButton.isHidden = isEditing
@@ -45,7 +48,7 @@ class RecipeCell: UICollectionViewCell {
         recipeImage.image = UIImage(data: recipe.imageName!)
         recipeTitles.text = recipe.recipeTitle
     }
-    //
+    // TODO: Arreglar este boton
     @IBAction func favoriteClicked(_ sender: Any) {
         
         delegate?.recipeFavorite(recipe: recipe)

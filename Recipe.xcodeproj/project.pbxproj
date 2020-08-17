@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36072BEC2486C7830013FC17 /* AddEditRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36072BEB2486C7830013FC17 /* AddEditRecipeVC.swift */; };
+		36072BEC2486C7830013FC17 /* AddRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36072BEB2486C7830013FC17 /* AddRecipeVC.swift */; };
 		360D6B45247825CC00C36752 /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D6B44247825CC00C36752 /* RecipeVC.swift */; };
 		360D6B472478289D00C36752 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D6B462478289D00C36752 /* RecipeCell.swift */; };
 		360D6B4A24782F3400C36752 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D6B4924782F3400C36752 /* RecipeDetailVC.swift */; };
@@ -27,6 +27,7 @@
 		365611DC249CD77D007867AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611DB249CD77D007867AA /* Extensions.swift */; };
 		365611E0249D0339007867AA /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611DE249D0339007867AA /* ForgotPasswordVC.swift */; };
 		365611E1249D0339007867AA /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365611DF249D0339007867AA /* ForgotPasswordVC.xib */; };
+		36591C8724EA7CC2007D46AA /* EditRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36591C8624EA7CC2007D46AA /* EditRecipeVC.swift */; };
 		366B66272474561000A64780 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66262474561000A64780 /* RegisterVC.swift */; };
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
@@ -49,7 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		36072BEB2486C7830013FC17 /* AddEditRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRecipeVC.swift; sourceTree = "<group>"; };
+		36072BEB2486C7830013FC17 /* AddRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
 		360D6B44247825CC00C36752 /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		360D6B462478289D00C36752 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		360D6B4924782F3400C36752 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		365611DB249CD77D007867AA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		365611DE249D0339007867AA /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		365611DF249D0339007867AA /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
+		36591C8624EA7CC2007D46AA /* EditRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeVC.swift; sourceTree = "<group>"; };
 		366B66262474561000A64780 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 				3614DEE0249BDBE800B377EA /* Static Recipes */,
 				360D6B44247825CC00C36752 /* RecipeVC.swift */,
 				360D6B462478289D00C36752 /* RecipeCell.swift */,
-				36072BEB2486C7830013FC17 /* AddEditRecipeVC.swift */,
+				36072BEB2486C7830013FC17 /* AddRecipeVC.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -219,6 +221,7 @@
 				367CFD1524744B960012F85F /* Model */,
 				367CFD1424744B910012F85F /* View */,
 				367CFD1324744B880012F85F /* Controller */,
+				36EF301D24EA7B8100F57207 /* Edit Recipe */,
 				366B662B247457AA00A64780 /* Customs */,
 				361F6EFD2493C72F006DA29E /* Utilities */,
 				365611DD249D02EA007867AA /* Xibs */,
@@ -280,6 +283,14 @@
 				36EA055F24CAFF1C00963484 /* SearchBarCell.swift */,
 			);
 			path = "Search Bar";
+			sourceTree = "<group>";
+		};
+		36EF301D24EA7B8100F57207 /* Edit Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				36591C8624EA7CC2007D46AA /* EditRecipeVC.swift */,
+			);
+			path = "Edit Recipe";
 			sourceTree = "<group>";
 		};
 		C5DAB25F7DFBD9E9A77081C8 /* Frameworks */ = {
@@ -442,7 +453,8 @@
 				365611DC249CD77D007867AA /* Extensions.swift in Sources */,
 				36EA056024CAFF1C00963484 /* SearchBarCell.swift in Sources */,
 				367CFD0224744B740012F85F /* SceneDelegate.swift in Sources */,
-				36072BEC2486C7830013FC17 /* AddEditRecipeVC.swift in Sources */,
+				36591C8724EA7CC2007D46AA /* EditRecipeVC.swift in Sources */,
+				36072BEC2486C7830013FC17 /* AddRecipeVC.swift in Sources */,
 				36457244249500D5002711E7 /* CategoryCollectionCell.swift in Sources */,
 				360D6B4A24782F3400C36752 /* RecipeDetailVC.swift in Sources */,
 			);

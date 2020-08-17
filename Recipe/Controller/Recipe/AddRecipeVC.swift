@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-public class AddEditRecipeVC: UIViewController {
+public class AddRecipeVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var prepTimeTextField: UITextField!
@@ -19,12 +19,10 @@ public class AddEditRecipeVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var ingridientsTextField: UITextView!
     @IBOutlet weak var instructionsTextField: UITextView!
-    @IBOutlet weak var saveButton: CustomButton!
+    @IBOutlet weak var createNewRecipe: CustomButton!
     
     let imagePicker = UIImagePickerController()
     let realm = try! Realm()
-    //
-    var recipe: Recipe!
     
     var foodCategory: FoodCategory?{
         didSet {
@@ -43,8 +41,6 @@ public class AddEditRecipeVC: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         imagePicker.delegate = self
-        //
-        setupEdit()
     }
     
     @objc func imageViewTapped() {
@@ -66,41 +62,7 @@ public class AddEditRecipeVC: UIViewController {
         
         present(controller, animated: true, completion: nil)
     }
-    //
-    func setupEdit() {
-        
-        imageView.image = UIImage(data: recipe.imageName!)
-        prepTimeTextField.text = recipe.preparation
-        cookTimeTextField.text = recipe.timeToCook
-        difficultyTextField.text = recipe.difficulty
-        serversTextField.text = recipe.serves
-        ingridientsTextField.text = recipe.ingridients
-        instructionsTextField.text = recipe.instructions
-        titleTextField.text = recipe.recipeTitle
-        
-        let editRecipe = Recipe()
-        editRecipe.recipeTitle = titleTextField.text!
-        editRecipe.preparation = prepTimeTextField.text!
-        editRecipe.timeToCook = cookTimeTextField.text!
-        editRecipe.difficulty = difficultyTextField.text!
-        editRecipe.serves = serversTextField.text!
-        editRecipe.ingridients = ingridientsTextField.text!
-        editRecipe.instructions = instructionsTextField.text!
-        editRecipe.imageName = imageView.image?.jpegData(compressionQuality: 0) // imagen reducida
-        print("add \(editRecipe) to \(String(describing: self.foodCategory))")
-        
-        do {
-            try realm.write {
-                self.foodCategory?.recipes.append(editRecipe)
-                self.realm.add(editRecipe, update: .all) // update: .modified, sin la primary key da error
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        // Pasar informacion a la CategoryVC
-        NotificationCenter.default.post(name: Notifications.newRecipe, object: nil, userInfo: nil)
-    }
-    
+
     func presentImagePicker(with sourceTyoe: UIImagePickerController.SourceType = .savedPhotosAlbum) {
         
         imagePicker.allowsEditing = false
@@ -108,10 +70,11 @@ public class AddEditRecipeVC: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func savePressed(_ sender: Any) {
+    @IBAction func saveNewRecipePressed(_ sender: Any) {
 
         // estudiar inheritance
         // estudiar primary keys
+        
         let newRecipe = Recipe()
         newRecipe.recipeTitle = titleTextField.text!
         newRecipe.preparation = prepTimeTextField.text!
@@ -126,12 +89,12 @@ public class AddEditRecipeVC: UIViewController {
         do {
             try realm.write {
                 self.foodCategory?.recipes.append(newRecipe)
-                self.realm.add(newRecipe, update: .all) // update: .modified, sin la primary key da error
+                self.realm.add(newRecipe) // update: .modified, sin la primary key da error
             }
         } catch {
             print(error.localizedDescription)
         }
-        // Pasar informacion a la CategoryVC
+//         Pasar informacion a la RecipeVC
         NotificationCenter.default.post(name: Notifications.newRecipe, object: nil, userInfo: nil)
         dismiss(animated: true, completion: nil)
     }
@@ -141,7 +104,7 @@ public class AddEditRecipeVC: UIViewController {
     }
 }
 
-extension AddEditRecipeVC: UITextFieldDelegate {
+extension AddRecipeVC: UITextFieldDelegate {
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -149,7 +112,7 @@ extension AddEditRecipeVC: UITextFieldDelegate {
     }
 }
 
-extension AddEditRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

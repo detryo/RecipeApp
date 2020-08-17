@@ -73,7 +73,7 @@ class RecipeVC: UIViewController {
         print("WTF IS destination \(segue.destination)")
         // Nos lleva al NewRecipe para añadir la receta
         if segue.identifier == Segue.toAddRecipe {
-            let destinationVC = segue.destination as? AddEditRecipeVC
+            let destinationVC = segue.destination as? AddRecipeVC
             print("to add recipe destinationVC \(String(describing: selectedCategory))")
             destinationVC?.foodCategory = selectedCategory
             
@@ -84,9 +84,9 @@ class RecipeVC: UIViewController {
             destinationVC?.recipe = selectedRecipe
             
         } else if segue.identifier == Segue.showEditing {
-            let destinationVC = segue.destination as? AddEditRecipeVC
+            let destinationVC = segue.destination as? EditRecipeVC
             print("mmmmmm")
-            destinationVC?.recipe = selectedRecipe
+            destinationVC?.editRecipe = selectedRecipe
         }
     }
 }
@@ -145,6 +145,13 @@ extension RecipeVC: RecipeCellDelegate {
     
     func recipeFavorite(recipe: Recipe) {
         userService.favoriteSelected(recipe: recipe.self)
+        
+        do {
+            try! realm.write({
+                realm.add(recipe)
+            })
+        }
+        
         print("recipe favorite \(recipe)")
     }
 }

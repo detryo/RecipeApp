@@ -98,7 +98,6 @@ extension NewCategoryVC: UIImagePickerControllerDelegate, UINavigationController
             imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
         }
-        
         dismiss(animated: true, completion: nil)
     }
     
