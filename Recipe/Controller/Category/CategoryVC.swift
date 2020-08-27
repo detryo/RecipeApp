@@ -54,16 +54,12 @@ class CategoryVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadCategories()
+        self.tableView.reloadData()
     }
 
      func loadCategories() {
         self.foodCategory = self.realm.objects(FoodCategory.self)
     }
-    //
-    @IBAction func favoriteClicked(_ sender: Any) {
-        performSegue(withIdentifier: Segue.toFavorites, sender: self)
-    }
-    
 }
 
 // MARK: TableVIew Data Source, Delegate
@@ -92,6 +88,9 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
                 cell.layer.shadowOpacity = 0.40
                 cell.layer.masksToBounds = false
                 cell.clipsToBounds = false
+                
+                cell.separatorInset.top = 32
+                cell.separatorInset.bottom = 32
             }
             return cell
         }
@@ -100,7 +99,7 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     // Tamaño de la celda
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 200
+       return 150
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -137,11 +136,6 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             let destinationVC = segue.destination as? StaticRecipeVC
             print("destinationVC TableView \(String(describing: categoryToPass))")
             destinationVC?.staticRecipe = categoryToPass
-            //
-        } else if segue.identifier == Segue.toFavorites {
-            let destination = segue.destination as? RecipeVC
-            destination?.selectedRecipe = selectedRecipe
-            print("favorites fail \(String(describing: selectedRecipe))")
         }
     }
 }

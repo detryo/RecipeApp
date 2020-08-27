@@ -26,8 +26,8 @@ class CustomTextField : UITextField {
         //color and moves the placeholder to the
         //right with color
         func setUpViewProperties() {
-            self.layer.borderWidth = 1.5
-            self.layer.cornerRadius = 1
+            self.layer.borderWidth = 3
+            self.layer.cornerRadius = 16
             
             self.layer.borderColor = UIColor(hexString: "E0E0E0", withAlpha: 1)?.cgColor
             self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor(hexString: "9E9E9E")!])

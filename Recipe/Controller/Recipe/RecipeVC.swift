@@ -26,18 +26,18 @@ class RecipeVC: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+
         //Coger informacion de NewCategoryVC
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newRecipe, object: nil)
         
         navigationItem.leftBarButtonItems = [UIBarButtonItem(title: BarButton.back, style: .done, target: self, action: #selector(backButtonPressed)), editButtonItem] //
         collectionView.reloadData()
     }
-    //
+    
     @objc func backButtonPressed() {
         navigationController?.popViewController(animated: true)
     }
-    //
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
@@ -71,7 +71,7 @@ class RecipeVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         print("WTF IS destination \(segue.destination)")
-        // Nos lleva al NewRecipe para añadir la receta
+        // Nos lleva al AddRecipeVC para añadir la receta
         if segue.identifier == Segue.toAddRecipe {
             let destinationVC = segue.destination as? AddRecipeVC
             print("to add recipe destinationVC \(String(describing: selectedCategory))")
@@ -105,11 +105,12 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         if let recipes = selectedCategory?.recipes[indexPath.row] {
             
             cell.configureCell(recipe: recipes, delegate: self)
-            cell.isEditing = isEditing //
+            cell.isEditing = isEditing
+            
         }
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.bounds.width
@@ -151,7 +152,6 @@ extension RecipeVC: RecipeCellDelegate {
                 realm.add(recipe)
             })
         }
-        
         print("recipe favorite \(recipe)")
     }
 }

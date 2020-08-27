@@ -24,6 +24,8 @@ struct Segue {
     
     static let toFavorites = "toFavorites"
     static let showEditing = "ShowEditing"
+    
+    static let showFavoriteRecipe = "showFavoriteRecipe"
 }
 
 struct Identifier {
@@ -33,6 +35,8 @@ struct Identifier {
     static let recipeTableView = "RecipeTableViewCell"
     static let categoryCollection = "CategoryCollectionCell"
     static let cell = "Cell"
+    
+    static let favoriteCell = "FavoriteCell"
 }
 
 struct AppImages {

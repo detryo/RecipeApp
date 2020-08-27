@@ -23,9 +23,8 @@ class RecipeCell: UICollectionViewCell {
     
     var recipe: Recipe!
     var delegate: RecipeCellDelegate?
-    //
+    var foodCategory: FoodCategory?
     let realm = try! Realm()
-    
     var isEditing: Bool = false {
         didSet {
             favoriteButton.isHidden = isEditing
@@ -48,18 +47,35 @@ class RecipeCell: UICollectionViewCell {
         recipeImage.image = UIImage(data: recipe.imageName!)
         recipeTitles.text = recipe.recipeTitle
     }
+
     // TODO: Arreglar este boton
-    @IBAction func favoriteClicked(_ sender: Any) {
+    @IBAction func favoriteClicked(_ sender: UIButton) {
         
         delegate?.recipeFavorite(recipe: recipe)
         
         if userService.favorites.contains(recipe) {
             favoriteButton.setImage(UIImage(named: AppImages.filledStar), for: .normal)
+            
+            let favRecipe = Recipe()
+            favRecipe.recipeTitle = recipeTitles.text!
+            favRecipe.imageName = recipeImage.image?.jpegData(compressionQuality: 0)
+            
+            do {
+                try realm.write({
+                    //self.foodCategory?.recipes.append(favRecipe)
+                    realm.add(favRecipe, update: .modified)
+                    print("se guardo la receta cuando se presiono el boton")
+                })
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+
         } else {
             favoriteButton.setImage(UIImage(named: AppImages.emptyStar), for: .normal)
         }
-        print("favorite button clicked")
         
+        print("favorite button was clicked")
+        NotificationCenter.default.post(name: Notifications.favoriteRecipe, object: nil, userInfo: nil)
     }
     
     @IBAction func deleteClicked(_ sender: Any) {

@@ -19,6 +19,7 @@ class EditRecipeVC: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var ingridientsTextField: UITextView!
     @IBOutlet weak var instructionsTextField: UITextView!
+    @IBOutlet weak var cancelButton: CustomButton!
     
     var editRecipe: Recipe!
     var foodCategory: FoodCategory?
@@ -35,6 +36,7 @@ class EditRecipeVC: UIViewController {
         imagePicker.delegate = self
         
         setupEditRecipe()
+        setUpButton()
     }
     
     @objc func imageViewTapped() {
@@ -75,6 +77,10 @@ class EditRecipeVC: UIViewController {
         instructionsTextField.text = editRecipe.instructions
         titleTextField.text = editRecipe.recipeTitle
     }
+    
+    func setUpButton() {
+        cancelButton.makeBacgroundWhiteWithBorder()
+    }
 
     @IBAction func editButtonPressed(_ sender: UIButton) {
         
@@ -92,7 +98,7 @@ class EditRecipeVC: UIViewController {
         do {
             try realm.write {
                 self.foodCategory?.recipes.append(editRecipe)
-                self.realm.add(editRecipe, update: .modified) // update: .modified, sin la primary key da error
+                self.realm.add(editRecipe, update: .modified)
             }
         } catch {
             print(error.localizedDescription)

@@ -23,11 +23,9 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        conditionSwitch.layer.cornerRadius = 20
-        
         passwordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         confirmPassText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-            
+        
         }
         
         @objc func textFieldDidChange(_ textField: UITextField) {

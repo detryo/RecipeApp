@@ -41,11 +41,14 @@
 		367CFD0C24744B760012F85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD0A24744B760012F85F /* LaunchScreen.storyboard */; };
 		367CFD1724744C860012F85F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD1624744C860012F85F /* GoogleService-Info.plist */; };
 		368A2446247EBFE800D65666 /* NewCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368A2445247EBFE800D65666 /* NewCategoryVC.swift */; };
+		36CB13E924F5638E008E158B /* FavoriteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CB13E824F5638E008E158B /* FavoriteCollectionVC.swift */; };
+		36CB13ED24F56413008E158B /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CB13EC24F56413008E158B /* FavoriteCell.swift */; };
 		36D9332E2499391B0082C420 /* StaticFoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332D2499391B0082C420 /* StaticFoodCategory.swift */; };
 		36D93330249939CC0082C420 /* StaticRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9332F249939CC0082C420 /* StaticRecipe.swift */; };
 		36EA055C24C9E45A00963484 /* SearchBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055B24C9E45A00963484 /* SearchBarTableViewController.swift */; };
 		36EA056024CAFF1C00963484 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055F24CAFF1C00963484 /* SearchBarCell.swift */; };
 		36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9F3E24759AE9008DA038 /* CustomTextField.swift */; };
+		36FCEBAE24F3C7E3002069C3 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCEBAD24F3C7E3002069C3 /* CustomSwitch.swift */; };
 		F5B2E9EB00B7CF0BD7BB4C55 /* Pods_Recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,11 +89,14 @@
 		367CFD0D24744B760012F85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		367CFD1624744C860012F85F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		368A2445247EBFE800D65666 /* NewCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryVC.swift; sourceTree = "<group>"; };
+		36CB13E824F5638E008E158B /* FavoriteCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionVC.swift; sourceTree = "<group>"; };
+		36CB13EC24F56413008E158B /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		36D9332D2499391B0082C420 /* StaticFoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFoodCategory.swift; sourceTree = "<group>"; };
 		36D9332F249939CC0082C420 /* StaticRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipe.swift; sourceTree = "<group>"; };
 		36EA055B24C9E45A00963484 /* SearchBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewController.swift; sourceTree = "<group>"; };
 		36EA055F24CAFF1C00963484 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		36FA9F3E24759AE9008DA038 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		36FCEBAD24F3C7E3002069C3 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		3E50E0C69C678CE30BF29924 /* Pods-Recipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipe/Pods-Recipe.release.xcconfig"; sourceTree = "<group>"; };
 		8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF95CCA6516FD2FDF50A44B /* Pods-Recipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recipe/Pods-Recipe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 				366B662E247458E500A64780 /* CustomColor.swift */,
 				36FA9F3E24759AE9008DA038 /* CustomTextField.swift */,
 				3637846D2476C9420089CE5F /* ShadowView.swift */,
+				36FCEBAD24F3C7E3002069C3 /* CustomSwitch.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 				367CFD1424744B910012F85F /* View */,
 				367CFD1324744B880012F85F /* Controller */,
 				36EF301D24EA7B8100F57207 /* Edit Recipe */,
+				36CB13E724F56377008E158B /* Favorite */,
 				366B662B247457AA00A64780 /* Customs */,
 				361F6EFD2493C72F006DA29E /* Utilities */,
 				365611DD249D02EA007867AA /* Xibs */,
@@ -264,6 +272,15 @@
 				361B8B022483C60900ED16A2 /* Notifications.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		36CB13E724F56377008E158B /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				36CB13E824F5638E008E158B /* FavoriteCollectionVC.swift */,
+				36CB13EC24F56413008E158B /* FavoriteCell.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		36D9332724990E050082C420 /* Static Data */ = {
@@ -423,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36CB13E924F5638E008E158B /* FavoriteCollectionVC.swift in Sources */,
 				367CFD0424744B740012F85F /* HomeVC.swift in Sources */,
 				36D9332E2499391B0082C420 /* StaticFoodCategory.swift in Sources */,
 				361F6EFF2493C749006DA29E /* Constants.swift in Sources */,
@@ -453,8 +471,10 @@
 				365611DC249CD77D007867AA /* Extensions.swift in Sources */,
 				36EA056024CAFF1C00963484 /* SearchBarCell.swift in Sources */,
 				367CFD0224744B740012F85F /* SceneDelegate.swift in Sources */,
+				36CB13ED24F56413008E158B /* FavoriteCell.swift in Sources */,
 				36591C8724EA7CC2007D46AA /* EditRecipeVC.swift in Sources */,
 				36072BEC2486C7830013FC17 /* AddRecipeVC.swift in Sources */,
+				36FCEBAE24F3C7E3002069C3 /* CustomSwitch.swift in Sources */,
 				36457244249500D5002711E7 /* CategoryCollectionCell.swift in Sources */,
 				360D6B4A24782F3400C36752 /* RecipeDetailVC.swift in Sources */,
 			);

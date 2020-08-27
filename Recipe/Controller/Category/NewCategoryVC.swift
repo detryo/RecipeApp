@@ -13,6 +13,7 @@ class NewCategoryVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var cancelButton: CustomButton!
     
     let imagePicker = UIImagePickerController()
     let realm = try! Realm()
@@ -25,7 +26,8 @@ class NewCategoryVC: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         imagePicker.delegate = self
-
+        
+        setUpButton()
     }
     // Presiona la imagen y aparece un pop up con las opciones de camara
     @objc func imageViewTapped() {
@@ -56,6 +58,10 @@ class NewCategoryVC: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func setUpButton() {
+        cancelButton.makeBacgroundWhiteWithBorder()
+    }
+    
     @IBAction func savePressed(_ sender: UIButton) {
         // asociamos newCategory a FoodCategory para tener acceso a sus variables
         let newCategory = FoodCategory()
@@ -69,10 +75,11 @@ class NewCategoryVC: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-        
-        dismiss(animated: true, completion: nil)
         // Pasar informacion a la CategoryVC
         NotificationCenter.default.post(name: Notifications.viewControllerPublishNotification, object: nil, userInfo: nil)
+        
+        self.dismiss(animated:true, completion:nil);
+        self.tabBarController?.selectedIndex = 0
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {

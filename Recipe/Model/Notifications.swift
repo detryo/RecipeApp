@@ -12,4 +12,5 @@ class Notifications {
     
     static let viewControllerPublishNotification = NSNotification.Name(rawValue: "ViewControllerPublishEvent")
     static let newRecipe = NSNotification.Name(rawValue: "NewRecipe")
+    static let favoriteRecipe = NSNotification.Name(rawValue: "FavoriteREcipe")
 }

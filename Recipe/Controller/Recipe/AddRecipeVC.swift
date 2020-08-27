@@ -20,6 +20,7 @@ public class AddRecipeVC: UIViewController {
     @IBOutlet weak var ingridientsTextField: UITextView!
     @IBOutlet weak var instructionsTextField: UITextView!
     @IBOutlet weak var createNewRecipe: CustomButton!
+    @IBOutlet weak var cancelButton: CustomButton!
     
     let imagePicker = UIImagePickerController()
     let realm = try! Realm()
@@ -41,6 +42,8 @@ public class AddRecipeVC: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         imagePicker.delegate = self
+        
+        setUpButton()
     }
     
     @objc func imageViewTapped() {
@@ -70,6 +73,10 @@ public class AddRecipeVC: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func setUpButton() {
+        cancelButton.makeBacgroundWhiteWithBorder()
+    }
+    
     @IBAction func saveNewRecipePressed(_ sender: Any) {
 
         // estudiar inheritance
@@ -89,12 +96,12 @@ public class AddRecipeVC: UIViewController {
         do {
             try realm.write {
                 self.foodCategory?.recipes.append(newRecipe)
-                self.realm.add(newRecipe) // update: .modified, sin la primary key da error
+                self.realm.add(newRecipe)
             }
         } catch {
             print(error.localizedDescription)
         }
-//         Pasar informacion a la RecipeVC
+       // Pasar informacion a la RecipeVC
         NotificationCenter.default.post(name: Notifications.newRecipe, object: nil, userInfo: nil)
         dismiss(animated: true, completion: nil)
     }

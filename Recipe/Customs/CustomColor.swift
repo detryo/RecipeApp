@@ -15,8 +15,8 @@ struct CustomColor {
     
     init(withFrame: CGRect) {
         
-        let firstColor = UIColor(hexString: "FF8C2B", withAlpha: 1.0)
-        let secondColor = UIColor(hexString: "FF6322", withAlpha: 1.0)
+        let firstColor = UIColor(hexString: "D25900", withAlpha: 1.0)
+        let secondColor = UIColor(hexString: "B52F00", withAlpha: 1.0)
         
         customOrange = UIColor(gradientStyle: .leftToRight, withFrame: withFrame, andColors: [firstColor!, secondColor!])
     }
