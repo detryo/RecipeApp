@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>We want to access your Library, so you can create a new Category</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We want to access your Camera, so you can create a new Category</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We want to access your Photo, so you can create a new Category</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -58,11 +64,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>We want to access your Camera, so you can create a new Category</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>We want to access your Library, so you can create a new Category</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We want to access your Photo, so you can create a new Category</string>
 </dict>
 </plist>

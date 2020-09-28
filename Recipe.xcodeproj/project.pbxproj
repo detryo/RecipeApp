@@ -17,6 +17,7 @@
 		360E4E822477D1C700A746CC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E4E812477D1C700A746CC /* CategoryCell.swift */; };
 		3614DEE2249BDC2800B377EA /* StaticRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3614DEE1249BDC2800B377EA /* StaticRecipeVC.swift */; };
 		361B8B032483C60900ED16A2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B8B022483C60900ED16A2 /* Notifications.swift */; };
+		361E8E112521D1540050CA45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E8E102521D1530050CA45 /* GoogleService-Info.plist */; };
 		361F6EFF2493C749006DA29E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361F6EFE2493C749006DA29E /* Constants.swift */; };
 		3626F784249A6ECB00365252 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626F783249A6ECB00365252 /* RecipeTableViewCell.swift */; };
 		3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846B2476C70F0089CE5F /* CategoryVC.swift */; };
@@ -39,7 +40,6 @@
 		367CFD0724744B740012F85F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD0524744B740012F85F /* Main.storyboard */; };
 		367CFD0924744B760012F85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD0824744B760012F85F /* Assets.xcassets */; };
 		367CFD0C24744B760012F85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD0A24744B760012F85F /* LaunchScreen.storyboard */; };
-		367CFD1724744C860012F85F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 367CFD1624744C860012F85F /* GoogleService-Info.plist */; };
 		368A2446247EBFE800D65666 /* NewCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368A2445247EBFE800D65666 /* NewCategoryVC.swift */; };
 		36CB13E924F5638E008E158B /* FavoriteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CB13E824F5638E008E158B /* FavoriteCollectionVC.swift */; };
 		36CB13ED24F56413008E158B /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CB13EC24F56413008E158B /* FavoriteCell.swift */; };
@@ -63,6 +63,7 @@
 		360E4E812477D1C700A746CC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		3614DEE1249BDC2800B377EA /* StaticRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipeVC.swift; sourceTree = "<group>"; };
 		361B8B022483C60900ED16A2 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		361E8E102521D1530050CA45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		361F6EFE2493C749006DA29E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3626F783249A6ECB00365252 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		3637846B2476C70F0089CE5F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		367CFD0824744B760012F85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		367CFD0B24744B760012F85F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		367CFD0D24744B760012F85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		367CFD1624744C860012F85F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		368A2445247EBFE800D65666 /* NewCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryVC.swift; sourceTree = "<group>"; };
 		36CB13E824F5638E008E158B /* FavoriteCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionVC.swift; sourceTree = "<group>"; };
 		36CB13EC24F56413008E158B /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -235,8 +235,8 @@
 				365611DD249D02EA007867AA /* Xibs */,
 				367CFCFF24744B740012F85F /* AppDelegate.swift */,
 				367CFD0124744B740012F85F /* SceneDelegate.swift */,
+				361E8E102521D1530050CA45 /* GoogleService-Info.plist */,
 				367CFD0824744B760012F85F /* Assets.xcassets */,
-				367CFD1624744C860012F85F /* GoogleService-Info.plist */,
 				367CFD0D24744B760012F85F /* Info.plist */,
 			);
 			path = Recipe;
@@ -388,8 +388,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				367CFD0C24744B760012F85F /* LaunchScreen.storyboard in Resources */,
-				367CFD1724744C860012F85F /* GoogleService-Info.plist in Resources */,
 				365611E1249D0339007867AA /* ForgotPasswordVC.xib in Resources */,
+				361E8E112521D1540050CA45 /* GoogleService-Info.plist in Resources */,
 				367CFD0924744B760012F85F /* Assets.xcassets in Resources */,
 				367CFD0724744B740012F85F /* Main.storyboard in Resources */,
 			);
@@ -624,11 +624,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Recipe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Recipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -643,11 +644,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Recipe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Recipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cristian.Recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

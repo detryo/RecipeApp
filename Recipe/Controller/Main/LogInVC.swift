@@ -31,7 +31,7 @@ class LogInVC: UIViewController {
     @IBAction func logInPressed(_ sender: UIButton) {
         
         guard let email = emailTextField.text, email.isNotEmpty,
-            let pass = passwordTextField.text, pass.isNotEmpty else {
+              let pass = passwordTextField.text, pass.isNotEmpty else {
                 simpleAlert(title: "Error", message: "Please fill out all fields")
                 return
         }
