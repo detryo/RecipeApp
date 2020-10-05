@@ -22,10 +22,7 @@ struct Segue {
     static let fromCategoryToStaticRecipe = "fromCategoryToStaticRecipe"
     static let showSearchDetails = "ShowSearchDetails"
     
-    static let toFavorites = "toFavorites"
     static let showEditing = "ShowEditing"
-    
-    static let showFavoriteRecipe = "showFavoriteRecipe"
 }
 
 struct Identifier {

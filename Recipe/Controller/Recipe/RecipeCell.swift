@@ -11,7 +11,7 @@ import RealmSwift
 
 protocol RecipeCellDelegate {
     
-    func recipeFavorite(recipe: Recipe)
+    
     func deleteRecipe(recipe: Recipe)
 }
 
@@ -55,15 +55,7 @@ class RecipeCell: UICollectionViewCell {
     // TODO: Arreglar este boton
     @IBAction func favoriteClicked(_ sender: UIButton) {
         
-        delegate?.recipeFavorite(recipe: recipe)
         
-        if UserService.favorites.contains(recipe) {
-            favoriteButton.setImage(UIImage(named: AppImages.filledStar), for: .normal)
-        } else {
-            favoriteButton.setImage(UIImage(named: AppImages.emptyStar), for: .normal)
-        }
-        
-        debugPrint("se guardo correctamente")
     }
     
     @IBAction func deleteClicked(_ sender: Any) {

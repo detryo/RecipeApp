@@ -66,7 +66,7 @@ class NewCategoryVC: UIViewController {
         // asociamos newCategory a FoodCategory para tener acceso a sus variables
         let newCategory = FoodCategory()
         newCategory.title = textField.text!
-        newCategory.imageName = imageView.image?.jpegData(compressionQuality: 0) // imagen reducida
+        newCategory.imageName = imageView.image?.jpegData(compressionQuality: 0.1) // imagen reducida
         
         do {
             try realm.write {

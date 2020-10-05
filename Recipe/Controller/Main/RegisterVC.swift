@@ -27,6 +27,7 @@ class RegisterVC: UIViewController {
         confirmPassText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         
         }
+    
         
         @objc func textFieldDidChange(_ textField: UITextField) {
             
@@ -83,37 +84,8 @@ class RegisterVC: UIViewController {
                 self.activityIndicator.stopAnimating()
                 return
             } else {
-                
-                //guard let fireUser = result?.user else { return }
-                let artUser = User.init(email: email)
-                
-                // Upload to firestore
-                self.createFireStoreUser(user: artUser)
-                
                 self.performSegue(withIdentifier: Segue.fromRegisterToCategory, sender: self)
             }
-        }
-    }
-    
-    func createFireStoreUser(user: User) {
-        
-        // Step 1: Create document reference
-        let newUserRef = Firestore.firestore().collection("users").document(user.email)
-        
-        // Step 2: Create model data
-        let data = User.modelToData(user: user)
-        
-        // Step 3: Upload to Firestore
-        newUserRef.setData(data) { (error) in
-            
-            if let error = error {
-                
-                Auth.auth().handleFireAuthError(error: error, viewController: self)
-                debugPrint("Unable to upload new user document \(error.localizedDescription)")
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
-            self.activityIndicator.stopAnimating()
         }
     }
 }

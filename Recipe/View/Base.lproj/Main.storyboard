@@ -409,69 +409,6 @@
             </objects>
             <point key="canvasLocation" x="5074" y="-263"/>
         </scene>
-        <!--Favorite CollectionVC-->
-        <scene sceneID="Vhk-2p-zvJ">
-            <objects>
-                <collectionViewController id="2YK-kJ-cuV" customClass="FavoriteCollectionVC" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="1bT-e5-fB6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ia5-vc-w4r">
-                            <size key="itemSize" width="150" height="205"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FavoriteCell" id="L0D-ln-UUb" customClass="FavoriteCell" customModule="Recipe" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Sd-n2-EMf">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tuna pasta bake" translatesAutoresizingMaskIntoConstraints="NO" id="4Tx-Ep-YN2">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="125"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-A4-zuX">
-                                            <rect key="frame" x="8" y="125" width="134" height="17"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="dVS-8f-t4g"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="4Tx-Ep-YN2" firstAttribute="leading" secondItem="6Sd-n2-EMf" secondAttribute="leading" id="2gb-RR-s1i"/>
-                                        <constraint firstItem="Cf5-A4-zuX" firstAttribute="top" secondItem="4Tx-Ep-YN2" secondAttribute="bottom" id="KSq-eh-rQi"/>
-                                        <constraint firstAttribute="trailing" secondItem="Cf5-A4-zuX" secondAttribute="trailing" constant="8" id="Ubk-aM-FbW"/>
-                                        <constraint firstItem="Cf5-A4-zuX" firstAttribute="leading" secondItem="6Sd-n2-EMf" secondAttribute="leading" constant="8" id="fMK-jT-bHe"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cf5-A4-zuX" secondAttribute="bottom" constant="8" id="mpc-sz-VEL"/>
-                                        <constraint firstItem="4Tx-Ep-YN2" firstAttribute="top" secondItem="6Sd-n2-EMf" secondAttribute="top" id="q0b-Qt-Pma"/>
-                                        <constraint firstAttribute="trailing" secondItem="4Tx-Ep-YN2" secondAttribute="trailing" id="tKn-27-UrD"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="150" height="150"/>
-                                <connections>
-                                    <outlet property="favoriteImage" destination="4Tx-Ep-YN2" id="Cyu-CI-Q5d"/>
-                                    <outlet property="favoriteTitle" destination="Cf5-A4-zuX" id="3Qg-d2-e6z"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="2YK-kJ-cuV" id="WCL-ri-dKo"/>
-                            <outlet property="delegate" destination="2YK-kJ-cuV" id="lxg-Bo-0W1"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="bCx-kU-kcR"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hQ8-Dx-qs2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4181" y="460"/>
-        </scene>
         <!--CategoryVC-->
         <scene sceneID="deu-8F-ijz">
             <objects>
@@ -593,26 +530,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7ty-8P-zvO">
-                        <rightBarButtonItems>
-                            <barButtonItem image="search_ic_big" id="Zah-4B-zrr">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="oed-ww-hz5" kind="show" id="xtv-vU-XX8"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="favourite_ic_pressed" id="eRy-Gg-c08">
-                                <connections>
-                                    <action selector="favoriteClicked:" destination="w1k-W7-ICz" id="ase-HY-ROc"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="search_ic_big" id="Zah-4B-zrr">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="oed-ww-hz5" kind="show" id="xtv-vU-XX8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TLz-FK-vyZ" id="LdY-ST-KIs"/>
                         <outlet property="tableView" destination="l7d-ag-dUT" id="4nP-C3-iaS"/>
                         <segue destination="ROe-6m-IbK" kind="show" identifier="fromCategoryToStaticRecipe" id="YZ3-eD-Vau"/>
                         <segue destination="BmO-5f-SXZ" kind="show" identifier="fromCategoryToRecipe" id="asZ-tu-90T"/>
-                        <segue destination="2YK-kJ-cuV" kind="show" identifier="toFavorites" id="NSW-ij-Ayl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sx-r8-MPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -675,7 +604,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVz-hL-yQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6920" y="2032"/>
+            <point key="canvasLocation" x="6914" y="1986"/>
         </scene>
         <!--New CategoryVC-->
         <scene sceneID="apc-Sg-8FA">
@@ -756,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7z-q6-aJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="1219"/>
+            <point key="canvasLocation" x="4229" y="1217"/>
         </scene>
         <!--Add RecipeVC-->
         <scene sceneID="EZ4-kx-gY5">
@@ -1009,7 +938,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItA-ii-u5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4174" y="2032"/>
+            <point key="canvasLocation" x="4242" y="2727"/>
         </scene>
         <!--RecipeVC-->
         <scene sceneID="DUw-Kj-x8E">
@@ -1124,7 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhR-nS-EoR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4173.913043478261" y="1218.75"/>
+            <point key="canvasLocation" x="5106" y="1990"/>
         </scene>
         <!--Recipe DetailVC-->
         <scene sceneID="D6t-4o-qms">
@@ -1348,7 +1277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GE5-T9-rVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6019" y="2032"/>
+            <point key="canvasLocation" x="6064" y="1986"/>
         </scene>
         <!--Static Recipe DetailVC-->
         <scene sceneID="UIt-9q-Wra">
@@ -1562,7 +1491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNk-gW-Tvn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7833" y="2032"/>
+            <point key="canvasLocation" x="7813" y="1993"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rKf-kZ-Ttg">
@@ -1832,7 +1761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ywt-41-nsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5025" y="2032"/>
+            <point key="canvasLocation" x="5165" y="2738"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XuI-1Z-dNi">
@@ -1871,7 +1800,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tB0-kZ-CyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="453"/>
+            <point key="canvasLocation" x="4203" y="459"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1892,7 +1821,6 @@
         <image name="dificulty_ic" width="24" height="24"/>
         <image name="edit" width="225" height="225"/>
         <image name="empty_star" width="47" height="47"/>
-        <image name="favourite_ic_pressed" width="24" height="24"/>
         <image name="home_ic" width="24" height="24"/>
         <image name="home_ic_pressed" width="24" height="24"/>
         <image name="main_screen_illu" width="375" height="220"/>

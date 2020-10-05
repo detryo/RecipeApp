@@ -20,6 +20,8 @@ class LogInVC: UIViewController {
         super.viewDidLoad()
     }
     
+    
+    
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         
         let forgotPasswordVC = ForgotPasswordVC()

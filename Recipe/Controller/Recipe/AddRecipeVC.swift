@@ -90,7 +90,7 @@ public class AddRecipeVC: UIViewController {
         newRecipe.serves = serversTextField.text!
         newRecipe.ingridients = ingridientsTextField.text!
         newRecipe.instructions = instructionsTextField.text!
-        newRecipe.imageName = imageView.image?.jpegData(compressionQuality: 0) // imagen reducida
+        newRecipe.imageName = imageView.image?.jpegData(compressionQuality: 0.2) // imagen reducida
         print("add \(newRecipe) to \(String(describing: self.foodCategory))")
         
         do {

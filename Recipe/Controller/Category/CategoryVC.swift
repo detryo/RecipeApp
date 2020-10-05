@@ -57,16 +57,6 @@ class CategoryVC: UIViewController {
         self.loadCategories()
         self.tableView.reloadData()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        if let user = Auth.auth().currentUser, !user.isAnonymous {
-            
-            if UserService.userListener == nil {
-                UserService.getCurrentUser()
-            }
-        }
-    }
 
      func loadCategories() {
         self.foodCategory = self.realm.objects(FoodCategory.self)
@@ -74,7 +64,6 @@ class CategoryVC: UIViewController {
     
     @IBAction func favoriteClicked(_ sender: Any) {
         
-        performSegue(withIdentifier: Segue.toFavorites, sender: self)
     }
 }
 
