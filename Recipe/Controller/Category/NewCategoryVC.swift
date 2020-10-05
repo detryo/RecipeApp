@@ -84,6 +84,7 @@ class NewCategoryVC: UIViewController {
     
     @IBAction func cancelPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 0
     }
 }
 

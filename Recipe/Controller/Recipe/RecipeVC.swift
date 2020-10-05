@@ -8,10 +8,18 @@
 
 import UIKit
 import RealmSwift
+import FirebaseFirestore
 
 class RecipeVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var userRef = [Recipe]()
+    var userFav : User!
+    var showFavorites = false //
+    var database: Firestore!
+    var listener : ListFormatter!
+    var pruebaRecipe: Recipe! //
     
     let realm = try! Realm()
     var selectedRecipe: Recipe?
@@ -32,6 +40,8 @@ class RecipeVC: UIViewController {
         
         navigationItem.leftBarButtonItems = [UIBarButtonItem(title: BarButton.back, style: .done, target: self, action: #selector(backButtonPressed)), editButtonItem] //
         collectionView.reloadData()
+        
+        
     }
     
     @objc func backButtonPressed() {
@@ -49,6 +59,40 @@ class RecipeVC: UIViewController {
         collectionView.reloadData()
     }
     
+    //
+    func setupQuery() {
+        
+        var ref: Query!
+        
+        if showFavorites {
+            ref = database.collection("users").document(UserService.user.email).collection("favorites")
+        }
+        
+//        listener = ref.addSnapshotListener({ (snap, error) in
+//
+//            if let error = error {
+//
+//                debugPrint(error.localizedDescription)
+//            }
+//
+//            snap?.documentChanges.forEach({ (change) in
+//
+//                let data = change.document.data()
+//                let recipe = Recipe.init(data: data)
+//
+//                switch change.type {
+//                case .added:
+//                    return self.onDocumentAdded(change: change, recipe: recipe!)
+//                case .modified:
+//                    return self.onDocumentModified(change: change, recipe: recipe!)
+//                case .removed:
+//                    return self.onDocumentRemoved(change: change)
+//                }
+//            })
+//
+//        }) as? ListFormatter
+    }
+    
     func loadRecipe() {
         print("loadding recipes for  \(String(describing: selectedCategory))")
     }
@@ -62,6 +106,7 @@ class RecipeVC: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -88,6 +133,39 @@ class RecipeVC: UIViewController {
             print("mmmmmm")
             destinationVC?.editRecipe = selectedRecipe
         }
+    }
+    
+    // MARK: - Firebase Documents Functions
+    func onDocumentAdded(change: DocumentChange, recipe: Recipe) {
+        
+        let newIndex = Int(change.newIndex)
+        userRef.insert(recipe, at: newIndex)
+        collectionView.reloadItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    
+    func onDocumentModified(change: DocumentChange, recipe: Recipe) {
+        
+        if change.oldIndex == change.newIndex {
+            // Item changed, but remined in the same position
+            let index = Int(change.newIndex)
+            userRef[index] = recipe
+            collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+            
+        } else {
+            // the itme changed and changed position
+            let oldIndex = Int(change.oldIndex)
+            let newIndex = Int(change.newIndex)
+            userRef.remove(at: oldIndex)
+            userRef.insert(recipe, at: newIndex)
+            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+        }
+    }
+    
+    func onDocumentRemoved(change: DocumentChange) {
+        
+        let oldIndex = Int(change.oldIndex)
+        userRef.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
 }
 
@@ -134,6 +212,13 @@ extension RecipeVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
 // MARK: - Delete function and Recipe Favorite function
 extension RecipeVC: RecipeCellDelegate {
     
+    func recipeFavorite(recipe: Recipe) {
+        
+        UserService.favoriteSelected(recipe: recipe)
+        guard let index = userRef.firstIndex(of: recipe) else { return }
+        collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+    }
+    
     func deleteRecipe(recipe: Recipe) {
         
         do {
@@ -144,14 +229,14 @@ extension RecipeVC: RecipeCellDelegate {
         collectionView.reloadData()
     }
     
-    func recipeFavorite(recipe: Recipe) {
-        userService.favoriteSelected(recipe: recipe.self)
-        
-        do {
-            try! realm.write({
-                realm.add(recipe)
-            })
-        }
-        print("recipe favorite \(recipe)")
-    }
+//    func recipeFavorite(recipe: Recipe) {
+//        userService.favoriteSelected(recipe: recipe.self)
+//
+//        do {
+//            try! realm.write({
+//                realm.add(recipe)
+//            })
+//        }
+//        print("recipe favorite \(recipe)")
+//    }
 }

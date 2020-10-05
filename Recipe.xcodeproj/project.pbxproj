@@ -18,6 +18,7 @@
 		3614DEE2249BDC2800B377EA /* StaticRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3614DEE1249BDC2800B377EA /* StaticRecipeVC.swift */; };
 		361B8B032483C60900ED16A2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B8B022483C60900ED16A2 /* Notifications.swift */; };
 		361E8E112521D1540050CA45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 361E8E102521D1530050CA45 /* GoogleService-Info.plist */; };
+		361E8E132521D3430050CA45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361E8E122521D3430050CA45 /* User.swift */; };
 		361F6EFF2493C749006DA29E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361F6EFE2493C749006DA29E /* Constants.swift */; };
 		3626F784249A6ECB00365252 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626F783249A6ECB00365252 /* RecipeTableViewCell.swift */; };
 		3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637846B2476C70F0089CE5F /* CategoryVC.swift */; };
@@ -29,6 +30,7 @@
 		365611E0249D0339007867AA /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365611DE249D0339007867AA /* ForgotPasswordVC.swift */; };
 		365611E1249D0339007867AA /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365611DF249D0339007867AA /* ForgotPasswordVC.xib */; };
 		36591C8724EA7CC2007D46AA /* EditRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36591C8624EA7CC2007D46AA /* EditRecipeVC.swift */; };
+		3668CABB2521EAA10077E167 /* UserReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668CABA2521EAA10077E167 /* UserReference.swift */; };
 		366B66272474561000A64780 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66262474561000A64780 /* RegisterVC.swift */; };
 		366B66292474563A00A64780 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B66282474563A00A64780 /* LogInVC.swift */; };
 		366B662D247457C300A64780 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B662C247457C300A64780 /* CustomButton.swift */; };
@@ -49,10 +51,11 @@
 		36EA056024CAFF1C00963484 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA055F24CAFF1C00963484 /* SearchBarCell.swift */; };
 		36FA9F3F24759AE9008DA038 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9F3E24759AE9008DA038 /* CustomTextField.swift */; };
 		36FCEBAE24F3C7E3002069C3 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCEBAD24F3C7E3002069C3 /* CustomSwitch.swift */; };
-		F5B2E9EB00B7CF0BD7BB4C55 /* Pods_Recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */; };
+		D03DB604F402FA10B45D95F7 /* Pods_Recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7696B3EA3B2375E25990BAAC /* Pods_Recipe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29AE51F71B504683B111A730 /* Pods-Recipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.release.xcconfig"; path = "Target Support Files/Pods-Recipe/Pods-Recipe.release.xcconfig"; sourceTree = "<group>"; };
 		36072BEB2486C7830013FC17 /* AddRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
 		360D6B44247825CC00C36752 /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		360D6B462478289D00C36752 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		3614DEE1249BDC2800B377EA /* StaticRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecipeVC.swift; sourceTree = "<group>"; };
 		361B8B022483C60900ED16A2 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		361E8E102521D1530050CA45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		361E8E122521D3430050CA45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		361F6EFE2493C749006DA29E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3626F783249A6ECB00365252 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		3637846B2476C70F0089CE5F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		365611DE249D0339007867AA /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		365611DF249D0339007867AA /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		36591C8624EA7CC2007D46AA /* EditRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeVC.swift; sourceTree = "<group>"; };
+		3668CABA2521EAA10077E167 /* UserReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReference.swift; sourceTree = "<group>"; };
 		366B66262474561000A64780 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		366B66282474563A00A64780 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		366B662C247457C300A64780 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -97,9 +102,8 @@
 		36EA055F24CAFF1C00963484 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		36FA9F3E24759AE9008DA038 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		36FCEBAD24F3C7E3002069C3 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
-		3E50E0C69C678CE30BF29924 /* Pods-Recipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipe/Pods-Recipe.release.xcconfig"; sourceTree = "<group>"; };
-		8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EF95CCA6516FD2FDF50A44B /* Pods-Recipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recipe/Pods-Recipe.debug.xcconfig"; sourceTree = "<group>"; };
+		7696B3EA3B2375E25990BAAC /* Pods_Recipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEF5212A6BDCD51EAB3FEDA /* Pods-Recipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe.debug.xcconfig"; path = "Target Support Files/Pods-Recipe/Pods-Recipe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5B2E9EB00B7CF0BD7BB4C55 /* Pods_Recipe.framework in Frameworks */,
+				D03DB604F402FA10B45D95F7 /* Pods_Recipe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +212,8 @@
 			children = (
 				367CFCFE24744B740012F85F /* Recipe */,
 				367CFCFD24744B740012F85F /* Products */,
-				D5F496A93B81A0A2EAF034FE /* Pods */,
-				C5DAB25F7DFBD9E9A77081C8 /* Frameworks */,
+				6C3A38FFDB3640D861C137CF /* Pods */,
+				94ADD914BF4D67E90EB8963F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +274,8 @@
 				360E4E7B2476D49800A746CC /* FoodCategory.swift */,
 				360E4E7D2476D51400A746CC /* Recipe.swift */,
 				361B8B022483C60900ED16A2 /* Notifications.swift */,
+				361E8E122521D3430050CA45 /* User.swift */,
+				3668CABA2521EAA10077E167 /* UserReference.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,21 +316,21 @@
 			path = "Edit Recipe";
 			sourceTree = "<group>";
 		};
-		C5DAB25F7DFBD9E9A77081C8 /* Frameworks */ = {
+		6C3A38FFDB3640D861C137CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8B55B4720D270EE0F5B31EB5 /* Pods_Recipe.framework */,
+				FEEF5212A6BDCD51EAB3FEDA /* Pods-Recipe.debug.xcconfig */,
+				29AE51F71B504683B111A730 /* Pods-Recipe.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		D5F496A93B81A0A2EAF034FE /* Pods */ = {
+		94ADD914BF4D67E90EB8963F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9EF95CCA6516FD2FDF50A44B /* Pods-Recipe.debug.xcconfig */,
-				3E50E0C69C678CE30BF29924 /* Pods-Recipe.release.xcconfig */,
+				7696B3EA3B2375E25990BAAC /* Pods_Recipe.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,11 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 367CFD1024744B760012F85F /* Build configuration list for PBXNativeTarget "Recipe" */;
 			buildPhases = (
-				DA01CB94DC9E695AAB0BEFCA /* [CP] Check Pods Manifest.lock */,
+				9E73B7A6212AC4611B291DAB /* [CP] Check Pods Manifest.lock */,
 				367CFCF824744B740012F85F /* Sources */,
 				367CFCF924744B740012F85F /* Frameworks */,
 				367CFCFA24744B740012F85F /* Resources */,
-				B433245A1BC4D78DE1733782 /* [CP] Embed Pods Frameworks */,
+				9A32A7683960AECBFDA80796 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -356,7 +362,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Cristian Sedano Arenas";
 				TargetAttributes = {
 					367CFCFB24744B740012F85F = {
@@ -398,7 +404,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B433245A1BC4D78DE1733782 /* [CP] Embed Pods Frameworks */ = {
+		9A32A7683960AECBFDA80796 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,16 +421,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipe/Pods-Recipe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA01CB94DC9E695AAB0BEFCA /* [CP] Check Pods Manifest.lock */ = {
+		9E73B7A6212AC4611B291DAB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Recipe-checkManifestLockResult.txt",
 			);
@@ -458,7 +468,9 @@
 				368A2446247EBFE800D65666 /* NewCategoryVC.swift in Sources */,
 				3637846C2476C70F0089CE5F /* CategoryVC.swift in Sources */,
 				36D93330249939CC0082C420 /* StaticRecipe.swift in Sources */,
+				361E8E132521D3430050CA45 /* User.swift in Sources */,
 				366F1B9824D02E0700BBFC97 /* UserService.swift in Sources */,
+				3668CABB2521EAA10077E167 /* UserReference.swift in Sources */,
 				3626F784249A6ECB00365252 /* RecipeTableViewCell.swift in Sources */,
 				3637846E2476C9420089CE5F /* ShadowView.swift in Sources */,
 				366B662D247457C300A64780 /* CustomButton.swift in Sources */,
@@ -528,6 +540,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -588,6 +601,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -609,6 +623,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -618,13 +633,13 @@
 		};
 		367CFD1124744B760012F85F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EF95CCA6516FD2FDF50A44B /* Pods-Recipe.debug.xcconfig */;
+			baseConfigurationReference = FEEF5212A6BDCD51EAB3FEDA /* Pods-Recipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Recipe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,13 +653,13 @@
 		};
 		367CFD1224744B760012F85F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E50E0C69C678CE30BF29924 /* Pods-Recipe.release.xcconfig */;
+			baseConfigurationReference = 29AE51F71B504683B111A730 /* Pods-Recipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 347CFEP3N9;
 				INFOPLIST_FILE = Recipe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

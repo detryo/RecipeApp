@@ -9,7 +9,8 @@
 import UIKit
 import RealmSwift
 
-protocol RecipeCellDelegate: class {
+protocol RecipeCellDelegate {
+    
     func recipeFavorite(recipe: Recipe)
     func deleteRecipe(recipe: Recipe)
 }
@@ -21,8 +22,11 @@ class RecipeCell: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
-    var recipe: Recipe!
+    //private var userRef : Recipe!
     var delegate: RecipeCellDelegate?
+    
+    var recipe: Recipe!
+    //var delegate: RecipeCellDelegate?
     var foodCategory: FoodCategory?
     let realm = try! Realm()
     var isEditing: Bool = false {
@@ -53,29 +57,13 @@ class RecipeCell: UICollectionViewCell {
         
         delegate?.recipeFavorite(recipe: recipe)
         
-        if userService.favorites.contains(recipe) {
+        if UserService.favorites.contains(recipe) {
             favoriteButton.setImage(UIImage(named: AppImages.filledStar), for: .normal)
-            
-            let favRecipe = Recipe()
-            favRecipe.recipeTitle = recipeTitles.text!
-            favRecipe.imageName = recipeImage.image?.jpegData(compressionQuality: 0)
-            
-            do {
-                try realm.write({
-                    //self.foodCategory?.recipes.append(favRecipe)
-                    realm.add(favRecipe, update: .modified)
-                    print("se guardo la receta cuando se presiono el boton")
-                })
-            } catch {
-                debugPrint(error.localizedDescription)
-            }
-
         } else {
             favoriteButton.setImage(UIImage(named: AppImages.emptyStar), for: .normal)
         }
         
-        print("favorite button was clicked")
-        NotificationCenter.default.post(name: Notifications.favoriteRecipe, object: nil, userInfo: nil)
+        debugPrint("se guardo correctamente")
     }
     
     @IBAction func deleteClicked(_ sender: Any) {

@@ -38,7 +38,7 @@ class LogInVC: UIViewController {
         
         activityIndicator.startAnimating()
         
-        Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: pass) { (authResult, error) in
             
             if let error = error {
                 debugPrint(error)
@@ -47,6 +47,8 @@ class LogInVC: UIViewController {
                 return
             } else {
                 self.activityIndicator.stopAnimating()
+                print(email)
+                self.performSegue(withIdentifier: Segue.fromLoginToCategory, sender: self)
                 self.dismiss(animated: true, completion: nil)
             }
         }

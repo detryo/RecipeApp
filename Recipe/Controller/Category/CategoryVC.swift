@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class CategoryVC: UIViewController {
     
@@ -56,9 +57,24 @@ class CategoryVC: UIViewController {
         self.loadCategories()
         self.tableView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
+            
+            if UserService.userListener == nil {
+                UserService.getCurrentUser()
+            }
+        }
+    }
 
      func loadCategories() {
         self.foodCategory = self.realm.objects(FoodCategory.self)
+    }
+    
+    @IBAction func favoriteClicked(_ sender: Any) {
+        
+        performSegue(withIdentifier: Segue.toFavorites, sender: self)
     }
 }
 
@@ -136,8 +152,17 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
             let destinationVC = segue.destination as? StaticRecipeVC
             print("destinationVC TableView \(String(describing: categoryToPass))")
             destinationVC?.staticRecipe = categoryToPass
-        }
+            //
+        }// else if segue.identifier == Segue.toFavorites {
+//            let destinationVC = segue.destination as? RecipeVC
+//            print("destinationVC pass to favorite section \(foodCategory![selectedCategory])")
+//            destinationVC?.pruebaRecipe = selectedRecipe
+//            destinationVC?.showFavorites = true
+//
+//        }
     }
+    
+    
 }
 // MARK: - Collection View Datasource, Delegate, Delegate Flow Layout for static data set
 extension CategoryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

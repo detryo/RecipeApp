@@ -21,7 +21,7 @@ class FavoriteCollectionVC: UICollectionViewController {
         collectionView.dataSource = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notifications.newRecipe, object: nil)
-        refresh()
+        
     }
     
     @objc func notificationReceived(_ notification: Notification) {
